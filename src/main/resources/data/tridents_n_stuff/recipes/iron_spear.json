@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	" TT",
+	" ST",
+	"S  "
+  ],
+  "key": {
+	"T": {
+	  "item": "minecraft:iron_ingot"
+	},
+	"S": {
+	  "item": "minecraft:stick"
+	}
+  },
+  "result": {
+	"item": "tridents_n_stuff:iron_spear"
+  }
+}
