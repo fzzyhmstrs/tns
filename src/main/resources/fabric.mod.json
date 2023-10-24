@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "tridents_n_stuff",
+  "version": "${version}",
+  "name": "Tridents 'n' Stuff",
+  "description": "Adds a variety of new, powerful Tridents and other trident-like weapons that can be found around the world and crafted.",
+  "authors": [
+    "fzzyhmstrs"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/tridents-n-stuff",
+    "issues": "https://github.com/fzzyhmstrs/tns/issues",
+    "sources": "https://github.com/fzzyhmstrs/tns"
+  },
+  "license": "MIT License",
+  "icon": "assets/tridents_n_stuff/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "me.fzzyhmstrs.template_kotlin.TNS"
+      }
+    ],
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "me.fzzyhmstrs.template_kotlin.TNSClient"
+      }
+    ],
+    "preLaunch": [
+      {
+        "adapter": "kotlin",
+        "value": "me.fzzyhmstrs.template_kotlin.TNSPreLaunch"
+      }
+    ]
+  },
+  "mixins": [
+    "tridents_n_stuff.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.22",
+    "fabric": "*",
+    "fabric-key-binding-api-v1": "*",
+    "fabric-language-kotlin": ">=1.7.4+kotlin.1.6.21",
+    "minecraft": ">=1.20.1",
+    "java": ">=17",
+	"fzzy_core": ">=0.3.0+1.20.1"
+  }
+}
