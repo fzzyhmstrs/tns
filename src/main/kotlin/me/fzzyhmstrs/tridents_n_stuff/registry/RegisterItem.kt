@@ -26,14 +26,39 @@ object RegisterItem {
         regItem.add(item)
         return Registry.register(Registries.ITEM, TNS.identity(name), item)
     }
-
+    // unique tridents
     val STORMSEEKER = register(StormseekerTridentItem(TnsConfig.materials.stormseeker,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "stormseeker")
+    val THE_DESECRATOR = register(DesecratorTridentItem(TnsConfig.materials.desecrator,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "the_desecrator")
+    val ECHO_OF_THE_DEEP = register(EchoOfTheDeepTridentItem(TnsConfig.materials.echo,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "echo_of_the_deep")
+    val STELLARIS = register(StellarisTridentItem(TnsConfig.materials.stellaris,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "stellaris")
+    val SANGUINE_BOND = register(SanguineBondTridentItem(TnsConfig.materials.sanguine,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "sanguine_bond")
 
+    //crafted tridents
+    val FRENZIED_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.frenzied,-2,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.FRENZIED_TRIDENT, w,e,s)}, "frenzied_trident")
+    val ANCIENT_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.ancient,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.ANCIENT_TRIDENT, w,e,s)}, "ancient_trident")
+    val OCEANIC_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.oceanic,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.OCEANIC_TRIDENT, w,e,s)}, "oceanic_trident")
+    val HOLY_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.holy,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.HOLY_TRIDENT, w,e,s)}, "holy_trident")
+    val FARSHOT_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.farshot,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> FarshotTridentEntity(RegisterEntity.FARSHOT_TRIDENT, w,e,s)}, "farshot_trident")
+
+    //Harpoon stuff
     val HARPOON_LAUNCHER = register(HarpoonLauncherItem(Item.Settings().maxDamage(325).rarity(Rarity.COMMON)),"harpoon_launcher")
-    val HARPOON = register(HarpoonItem(Item.Settings()),"bone_harpoon")
+    val BONE_HARPOON = register(HarpoonItem(Item.Settings()),"bone_harpoon")
 
+    //spear stuff
+    val WOODEN_SPEAR = register(SpearItem(ToolMaterials.WOOD, -2, -2.9f, FabricItemSettings(), RegisterEntity.WOODEN_SPEAR), "wooden_spear")
+    val STONE_SPEAR = register(SpearItem(ToolMaterials.STONE, -2, -2.9f, FabricItemSettings(), RegisterEntity.STONE_SPEAR), "stone_spear")
+    val IRON_SPEAR = register(SpearItem(ToolMaterials.IRON, -2, -2.9f, FabricItemSettings(), RegisterEntity.IRON_SPEAR), "iron_spear")
+    val GOLDEN_SPEAR = register(SpearItem(ToolMaterials.GOLD, -2, -2.9f, FabricItemSettings(), RegisterEntity.GOLDEN_SPEAR), "golden_spear")
+    val DIAMOND_SPEAR = register(SpearItem(ToolMaterials.DIAMOND, -2, -2.9f, FabricItemSettings(), RegisterEntity.DIAMOND_SPEAR), "diamond_spear")
+    val NETHERITE_SPEAR = register(SpearItem(ToolMaterials.NETHERITE, -2, -2.9f, FabricItemSettings(), RegisterEntity.NETHERITE_SPEAR), "netherite_spear")
+
+    
     val TNS_GROUP: ItemGroup by lazy{
         registerItemGroup()
+    }
+
+    fun getItems(): List<Item>{
+        return regItem
     }
 
     fun registerItemGroup(): ItemGroup{
