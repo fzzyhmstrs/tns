@@ -4,7 +4,7 @@ import me.fzzyhmstrs.fzzy_core.item_util.interfaces.Flavorful
 import net.minecraft.item.SwordItem
 import net.minecraft.item.ToolMaterial
 
-class SpearItem(privat val material: ToolMaterial, attackDamage: Int, attackSpeed: Float, settings: Settings, private val entityBuilder: BasicCustomTridentItem.EntityBuilder<SpearEntity>):
+class SpearItem(privat val material: ToolMaterial, attackDamage: Int, attackSpeed: Float, settings: Settings, private val entityType: EntityType<SpearEntity>):
     SwordItem(material, attackDamage, attackSpeed, settings) {
 
     override fun canRepair(stack: ItemStack, ingredient: ItemStack): Boolean {
@@ -26,7 +26,7 @@ class SpearItem(privat val material: ToolMaterial, attackDamage: Int, attackSpee
         livingEntity: LivingEntity,
         stack: ItemStack
     ): SpearEntity {
-        return entityBuilder.build(world, livingEntity, stack).also { it.setDamage(material) }
+        return SpearEntity(entityType, world, livingEntity, stack).also { it.setDamage(material) }
     }    
 
     override fun onStoppedUsing(stack: ItemStack, world: World, user: LivingEntity, remainingUseTicks: Int) {
