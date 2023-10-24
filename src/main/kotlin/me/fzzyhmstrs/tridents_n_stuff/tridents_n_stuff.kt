@@ -1,6 +1,6 @@
 @file:Suppress("PropertyName")
 
-package me.fzzyhmstrs.template_kotlin
+package me.fzzyhmstrs.tridents_n_stuff
 
 import com.llamalad7.mixinextras.MixinExtrasBootstrap
 import net.fabricmc.api.ClientModInitializer
@@ -14,9 +14,9 @@ import org.slf4j.LoggerFactory
 import kotlin.random.Random
 
 
-object TemplateKotlin: ModInitializer {
-    const val MOD_ID = "template_kotlin"
-    val LOGGER: Logger = LoggerFactory.getLogger("template_kotlin")
+object TNS: ModInitializer {
+    const val MOD_ID = "tridents_n_stuff"
+    val LOGGER: Logger = LoggerFactory.getLogger("tridents_n_stuff")
     override fun onInitialize() {
     }
 
@@ -30,7 +30,7 @@ object TemplateKotlin: ModInitializer {
 }
 
 @Environment(value = EnvType.CLIENT)
-object TemplateKotlinClient: ClientModInitializer{
+object TNSClient: ClientModInitializer{
 
     override fun onInitializeClient() {
     }
@@ -40,7 +40,7 @@ object TemplateKotlinClient: ClientModInitializer{
     }
 }
 
-object TemplateKotlinPreLaunch: PreLaunchEntrypoint{
+object TNSPreLaunch: PreLaunchEntrypoint{
 
     override fun onPreLaunch() {
         MixinExtrasBootstrap.init()
