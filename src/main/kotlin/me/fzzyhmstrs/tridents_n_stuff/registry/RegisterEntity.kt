@@ -64,9 +64,9 @@ object RegisterEntity {
         { entityType: EntityType<CustomTridentEntity>, world: World ->
             CustomTridentEntity(entityType,world)
         }, "holy_trident_entity")
-    val FARSHOT_TRIDENT: EntityType<CustomTridentEntity> = register(
-        { entityType: EntityType<CustomTridentEntity>, world: World ->
-            CustomTridentEntity(entityType,world)
+    val FARSHOT_TRIDENT: EntityType<FarshotTridentEntity> = register(
+        { entityType: EntityType<FarshotTridentEntity>, world: World ->
+            FarshotTridentEntity(entityType,world)
         }, "farshot_trident_entity")
 
     //////////////////////
