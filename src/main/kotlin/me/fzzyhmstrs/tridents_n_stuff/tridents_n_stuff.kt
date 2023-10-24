@@ -3,6 +3,7 @@
 package me.fzzyhmstrs.tridents_n_stuff
 
 import com.llamalad7.mixinextras.MixinExtrasBootstrap
+import me.fzzyhmstrs.tridents_n_stuff.registry.RegisterItem
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
@@ -18,6 +19,7 @@ object TNS: ModInitializer {
     const val MOD_ID = "tridents_n_stuff"
     val LOGGER: Logger = LoggerFactory.getLogger("tridents_n_stuff")
     override fun onInitialize() {
+        RegisterItem.registerAll()
     }
 
     fun random(): Random{

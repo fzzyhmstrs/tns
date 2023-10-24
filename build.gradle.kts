@@ -88,10 +88,10 @@ dependencies {
         exclude("net.fabricmc.fabric-api")
     }
 
-    /*val gcVersion: String by project
+    val gcVersion: String by project
     modImplementation(":gear_core-$gcVersion"){
         exclude("net.fabricmc.fabric-api")
-    }*/
+    }
 
     /*val aiVersion: String by project
     modImplementation(":amethyst_imbuement-$aiVersion"){
