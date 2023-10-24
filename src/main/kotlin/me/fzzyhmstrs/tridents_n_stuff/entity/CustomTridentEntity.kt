@@ -41,7 +41,7 @@ open class CustomTridentEntity : PersistentProjectileEntity {
         dataTracker.set(ENCHANTED, stack.hasGlint())
     }
 
-    fun setDamage(material:ToolMaterial){
+    fun setDamage(material:ToolMaterial) {
         this.damage = material.attackDamage
     }
 

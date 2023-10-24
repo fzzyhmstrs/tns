@@ -1,6 +1,13 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
 import me.fzzyhmstrs.tridents_n_stuff.TNS
+import me.fzzyhmstrs.tridents_n_stuff.config.TnsConfig
+import me.fzzyhmstrs.tridents_n_stuff.entity.StormseekerTridentEntity
+import me.fzzyhmstrs.tridents_n_stuff.item.BasicCustomTridentItem
+import me.fzzyhmstrs.tridents_n_stuff.item.HarpoonItem
+import me.fzzyhmstrs.tridents_n_stuff.item.HarpoonLauncherItem
+import me.fzzyhmstrs.tridents_n_stuff.item.StormseekerTridentItem
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
@@ -9,6 +16,7 @@ import net.minecraft.item.Items
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.text.Text
+import net.minecraft.util.Rarity
 
 object RegisterItem {
 
@@ -19,6 +27,10 @@ object RegisterItem {
         return Registry.register(Registries.ITEM, TNS.identity(name), item)
     }
 
+    val STORMSEEKER = register(StormseekerTridentItem(TnsConfig.materials.stormseeker,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "stormseeker")
+
+    val HARPOON_LAUNCHER = register(HarpoonLauncherItem(Item.Settings().maxDamage(325).rarity(Rarity.COMMON)),"harpoon_launcher")
+    val HARPOON = register(HarpoonItem(Item.Settings()),"bone_harpoon")
 
     val TNS_GROUP: ItemGroup by lazy{
         registerItemGroup()

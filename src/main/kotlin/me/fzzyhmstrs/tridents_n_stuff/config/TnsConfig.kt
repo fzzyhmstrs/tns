@@ -2,10 +2,8 @@ package me.fzzyhmstrs.tridents_n_stuff.config
 
 import me.fzzyhmstrs.fzzy_config.config_util.*
 import me.fzzyhmstrs.fzzy_config.interfaces.OldClass
-import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedFloat
-import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedInt
+import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedDouble
 import me.fzzyhmstrs.fzzy_config.validated_field.list.ValidatedStringList
-import me.fzzyhmstrs.fzzy_config.validated_field.map.ValidatedStringBoolMap
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.material.TnsTridentMaterialsConfig
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
@@ -32,6 +30,23 @@ object TnsConfig:
             .space()
             .build()), SimpleSynchronousResourceReloadListener
 {
+
+    private val itemsHeader = buildSectionHeader("items")
+
+    class Items: ConfigClass(materialsHeader), OldClass<Items>{
+
+        var harpoon = Harpoon()
+        class Harpoon: ConfigSection(Header.Builder().space().add("tns.readme.items.harpoon_1").build()){
+            var baseDamage = ValidatedDouble(5.0,50.0,0.0)
+            var powerAdderPerLevel = ValidatedDouble(1.25,12.5,0.0)
+            var powerBaseAdder = ValidatedDouble(1.0,10.0,0.0)
+        }
+
+        override fun generateNewClass(): Items {
+            return this
+        }
+
+    }
 
     private val materialsHeader = buildSectionHeader("materials")
 
