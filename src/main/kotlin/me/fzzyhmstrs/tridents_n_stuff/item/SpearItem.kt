@@ -4,7 +4,7 @@ import me.fzzyhmstrs.fzzy_core.item_util.interfaces.Flavorful
 import net.minecraft.item.SwordItem
 import net.minecraft.item.ToolMaterial
 
-open class SpearItem(privat val material: ToolMaterial, attackDamage: Int, attackSpeed: Float, settings: Settings, private val entityType: EntityType<SpearEntity>):
+open class SpearItem(private val material: ToolMaterial, attackDamage: Int, attackSpeed: Float, settings: Settings, private val entityType: EntityType<SpearEntity>):
     SwordItem(material, attackDamage, attackSpeed, settings) {
 
     override fun canRepair(stack: ItemStack, ingredient: ItemStack): Boolean {
