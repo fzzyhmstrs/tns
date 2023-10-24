@@ -13,6 +13,9 @@ object RegisterRenderer {
     val CUSTOM_TRIDENT: EntityModelLayer = EntityModelLayer(TNS.identity("custom_trident"),"custom_trident_model")
     val CUSTOM_FANCY_TRIDENT: EntityModelLayer = EntityModelLayer(TNS.identity("custom_fancy_trident"),"custom_fancy_trident_model")
 
+     EntityRendererRegistry.register(
+            RegisterEntity.STORMSEEKER
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<StormseekerTridentEntity>(context) }
 
 
     fun registerAll(){
