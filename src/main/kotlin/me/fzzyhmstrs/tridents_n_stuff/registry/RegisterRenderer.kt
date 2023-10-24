@@ -16,9 +16,12 @@ object RegisterRenderer {
 
 
     fun registerAll(){
-        ModelPredicateProviderRegistry.register(
-            RegisterItem.STORMSEEKER, Identifier("throwing")
-        ) { stack: ItemStack, _: ClientWorld?, entity: LivingEntity?, _: Int -> if (entity != null && entity.isUsingItem && entity.activeItem == stack) 1.0f else 0.0f }
+        for (item in RegisterItem.getItems()){
+            if (!(item is CustomTridentItem || item is HarpoonItem || item is SpearItem)) continue
+            ModelPredicateProviderRegistry.register(
+                item, Identifier("throwing")
+            ) { stack: ItemStack, _: ClientWorld?, entity: LivingEntity?, _: Int -> if (entity != null && entity.isUsingItem && entity.activeItem == stack) 1.0f else 0.0f }
+        }
     }
 
 }
