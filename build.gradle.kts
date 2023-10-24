@@ -83,10 +83,10 @@ dependencies {
         exclude("net.fabricmc.fabric-api")
     }*/
 
-    /*val fcVersion: String by project
+    val fcVersion: String by project
     modImplementation(":fzzy_core-$fcVersion"){
         exclude("net.fabricmc.fabric-api")
-    }*/
+    }
 
     /*val gcVersion: String by project
     modImplementation(":gear_core-$gcVersion"){
