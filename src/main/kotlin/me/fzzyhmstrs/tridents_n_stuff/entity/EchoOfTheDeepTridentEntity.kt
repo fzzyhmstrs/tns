@@ -6,11 +6,11 @@ import net.minecraft.entity.LivingEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.world.World
 
-class StormseekerTridentEntity: CustomTridentEntity {
+class EchoOfTheDeepTridentEntity: CustomTridentEntity {
 
     constructor(entityType: EntityType<out CustomTridentEntity?>?, world: World?) : super(entityType, world)
     constructor(world: World?, owner: LivingEntity?, stack: ItemStack) : super(
-        RegisterEntity.STORMSEEKER,
+        RegisterEntity.ECHO_OF_THE_DEEP,
         world,
         owner,
         stack

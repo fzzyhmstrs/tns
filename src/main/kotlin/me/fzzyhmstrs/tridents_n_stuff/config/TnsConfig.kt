@@ -53,6 +53,16 @@ object TnsConfig:
     class Materials: ConfigClass(materialsHeader), OldClass<Materials>{
 
         var stormseeker = TnsTridentMaterialsConfig.STORMSEEKER
+        var desecrator = TnsTridentMaterialsConfig.DESECRATOR
+        var echo = TnsTridentMaterialsConfig.ECHO
+        var stellaris = TnsTridentMaterialsConfig.STELLARIS
+        var sanguine = TnsTridentMaterialsConfig.SANGUINE
+
+        var frenzied = TnsTridentMaterialsConfig.FRENZIED
+        var ancient = TnsTridentMaterialsConfig.ANCIENT
+        var oceanic = TnsTridentMaterialsConfig.OCEANIC
+        var holy = TnsTridentMaterialsConfig.HOLY
+        var farshot = TnsTridentMaterialsConfig.FARSHOT
 
         override fun generateNewClass(): Materials {
             return this

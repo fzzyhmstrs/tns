@@ -1,18 +1,15 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
+import me.fzzyhmstrs.amethyst_imbuement.item.custom.SpearItem
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.config.TnsConfig
+import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity
+import me.fzzyhmstrs.tridents_n_stuff.entity.FarshotTridentEntity
 import me.fzzyhmstrs.tridents_n_stuff.entity.StormseekerTridentEntity
-import me.fzzyhmstrs.tridents_n_stuff.item.BasicCustomTridentItem
-import me.fzzyhmstrs.tridents_n_stuff.item.HarpoonItem
-import me.fzzyhmstrs.tridents_n_stuff.item.HarpoonLauncherItem
-import me.fzzyhmstrs.tridents_n_stuff.item.StormseekerTridentItem
+import me.fzzyhmstrs.tridents_n_stuff.item.*
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
-import net.minecraft.item.Item
-import net.minecraft.item.ItemGroup
-import net.minecraft.item.ItemStack
-import net.minecraft.item.Items
+import net.minecraft.item.*
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.text.Text
@@ -34,15 +31,15 @@ object RegisterItem {
     val SANGUINE_BOND = register(SanguineBondTridentItem(TnsConfig.materials.sanguine,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "sanguine_bond")
 
     //crafted tridents
-    val FRENZIED_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.frenzied,-2,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.FRENZIED_TRIDENT, w,e,s)}, "frenzied_trident")
-    val ANCIENT_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.ancient,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.ANCIENT_TRIDENT, w,e,s)}, "ancient_trident")
-    val OCEANIC_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.oceanic,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.OCEANIC_TRIDENT, w,e,s)}, "oceanic_trident")
+    val FRENZIED_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.frenzied,-1.6,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.FRENZIED_TRIDENT, w,e,s) }, "frenzied_trident")
+    val ANCIENT_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.ancient,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.ANCIENT_TRIDENT, w,e,s) }, "ancient_trident")
+    val OCEANIC_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.oceanic,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.OCEANIC_TRIDENT, w,e,s) }, "oceanic_trident")
     val HOLY_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.holy,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.HOLY_TRIDENT, w,e,s)}, "holy_trident")
-    val FARSHOT_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.farshot,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> FarshotTridentEntity(RegisterEntity.FARSHOT_TRIDENT, w,e,s)}, "farshot_trident")
+    val FARSHOT_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.farshot,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> FarshotTridentEntity(w,e,s) }, "farshot_trident")
 
     //Harpoon stuff
     val HARPOON_LAUNCHER = register(HarpoonLauncherItem(Item.Settings().maxDamage(325).rarity(Rarity.COMMON)),"harpoon_launcher")
-    val BONE_HARPOON = register(HarpoonItem(Item.Settings()),"bone_harpoon")
+    val BONE_HARPOON = register(HarpoonItem(5.0,Item.Settings()),"bone_harpoon")
 
     //spear stuff
     val WOODEN_SPEAR = register(SpearItem(ToolMaterials.WOOD, -2, -2.9f, FabricItemSettings(), RegisterEntity.WOODEN_SPEAR), "wooden_spear")

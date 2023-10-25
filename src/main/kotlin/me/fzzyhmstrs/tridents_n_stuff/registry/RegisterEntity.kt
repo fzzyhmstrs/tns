@@ -1,9 +1,9 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
 import me.fzzyhmstrs.tridents_n_stuff.TNS
-import me.fzzyhmstrs.tridents_n_stuff.entity.HarpoonEntity
-import me.fzzyhmstrs.tridents_n_stuff.entity.StormseekerTridentEntity
+import me.fzzyhmstrs.tridents_n_stuff.entity.*
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricEntityTypeBuilder
+import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityDimensions
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.SpawnGroup
@@ -13,8 +13,8 @@ import net.minecraft.world.World
 
 object RegisterEntity {
 
-    fun <T: Entity> register(factory: EntityType.EntityFactory<T>, name: String): T{
-        Registry.register(Registries.ENTITY_TYPE, TNS.identity(name),
+    fun <T: Entity> register(factory: EntityType.EntityFactory<T>, name: String): EntityType<T>{
+        return Registry.register(Registries.ENTITY_TYPE, TNS.identity(name),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC,factory)
                 .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).trackRangeChunks(4).trackedUpdateRate(20).build()
         )

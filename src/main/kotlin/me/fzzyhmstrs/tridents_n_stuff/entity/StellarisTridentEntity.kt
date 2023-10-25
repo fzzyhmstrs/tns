@@ -6,11 +6,11 @@ import net.minecraft.entity.LivingEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.world.World
 
-class StormseekerTridentEntity: CustomTridentEntity {
+class StellarisTridentEntity: CustomTridentEntity {
 
     constructor(entityType: EntityType<out CustomTridentEntity?>?, world: World?) : super(entityType, world)
     constructor(world: World?, owner: LivingEntity?, stack: ItemStack) : super(
-        RegisterEntity.STORMSEEKER,
+        RegisterEntity.STELLARIS,
         world,
         owner,
         stack
