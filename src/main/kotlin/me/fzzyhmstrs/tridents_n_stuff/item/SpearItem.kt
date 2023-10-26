@@ -1,4 +1,4 @@
-package me.fzzyhmstrs.amethyst_imbuement.item.custom
+package me.fzzyhmstrs.tridents_n_stuff.item
 
 import me.fzzyhmstrs.fzzy_core.item_util.interfaces.Flavorful
 import me.fzzyhmstrs.tridents_n_stuff.entity.SpearEntity
