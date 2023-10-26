@@ -1,0 +1,14 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "tridents_n_stuff:item/harpoon_launcher"
+  },
+  "overrides": [
+        {
+            "predicate": {
+                "throwing": 1
+            },
+            "model": "tridents_n_stuff:item/harpoon_launcher_throwing"
+        }
+    ]
+}
