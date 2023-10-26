@@ -75,6 +75,14 @@ object RegisterEntity {
         { entityType: EntityType<HarpoonEntity>, world: World ->
             HarpoonEntity(entityType,world)
         },"bone_harpoon_entity")
+    val PRISMARINE_HARPOON: EntityType<HarpoonEntity> = register(
+        { entityType: EntityType<HarpoonEntity>, world: World ->
+            HarpoonEntity(entityType,world)
+        },"prismarine_harpoon_entity")
+    val DIAMOND_HARPOON: EntityType<HarpoonEntity> = register(
+        { entityType: EntityType<HarpoonEntity>, world: World ->
+            HarpoonEntity(entityType,world)
+        },"diamond_harpoon_entity")
 
     //////////////////////
     

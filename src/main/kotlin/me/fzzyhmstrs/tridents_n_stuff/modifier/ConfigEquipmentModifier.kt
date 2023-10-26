@@ -1,4 +1,4 @@
-package me.fzzyhmstrs.tridents_n_stuff.model
+package me.fzzyhmstrs.tridents_n_stuff.modifier
 
 import me.fzzyhmstrs.fzzy_core.modifier_util.AbstractModifierHelper
 import me.fzzyhmstrs.gear_core.modifier_util.ConfigEquipmentModifier

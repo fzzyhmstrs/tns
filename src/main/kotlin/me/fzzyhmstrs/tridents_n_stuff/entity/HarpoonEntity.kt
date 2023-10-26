@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.projectile.PersistentProjectileEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.network.packet.s2c.play.GameStateChangeS2CPacket
+import net.minecraft.registry.RegistryOps.RegistryInfoGetter
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.sound.SoundEvent
 import net.minecraft.sound.SoundEvents
@@ -19,8 +20,13 @@ import net.minecraft.world.World
 
 class HarpoonEntity: PersistentProjectileEntity {
     constructor(entityType: EntityType<out HarpoonEntity?>, world: World) : super(entityType, world)
-    constructor(world: World, x: Double, y: Double, z: Double): super(RegisterEntity.HARPOON_ENTITY,x, y, z, world)
-    constructor(world: World, owner: LivingEntity): super(RegisterEntity.HARPOON_ENTITY,owner, world)
+    constructor(world: World, x: Double, y: Double, z: Double): super(RegisterEntity.BONE_HARPOON,x, y, z, world)
+
+    private var stack = ItemStack(RegisterItem.BONE_HARPOON)
+
+    constructor(entityType: EntityType<out HarpoonEntity?>,world: World, owner: LivingEntity, stack: ItemStack): super(entityType,owner, world){
+        this.stack = stack
+    }
 
     companion object{
         val baseDamage = 5.0
@@ -34,7 +40,7 @@ class HarpoonEntity: PersistentProjectileEntity {
     }
 
     override fun asItemStack(): ItemStack {
-        return ItemStack(RegisterItem.HARPOON)
+        return stack.copy()
     }
 
     override fun getDragInWater(): Float {

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	" ST",
+	" SI",
+	"S  "
+  ],
+  "key": {
+	"S": {
+	  "item": "minecraft:stick"
+	},
+	"T": {
+	  "item": "minecraft:string"
+	},
+	"I": {
+	  "item": "minecraft:iron_ingot"
+	}
+  },
+  "result": {
+	"item": "ai_odyssey:harpoon_launcher"
+  }
+}

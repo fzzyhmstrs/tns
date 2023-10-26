@@ -2,7 +2,7 @@ package me.fzzyhmstrs.tridents_n_stuff.registry
 
 import me.fzzyhmstrs.fzzy_core.modifier_util.AbstractModifier
 import me.fzzyhmstrs.gear_core.modifier_util.EquipmentModifier
-import me.fzzyhmstrs.tridents_n_stuff.model.ConfigEquipmentModifier
+import me.fzzyhmstrs.tridents_n_stuff.modifier.ConfigEquipmentModifier
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider
 import net.minecraft.loot.provider.number.UniformLootNumberProvider
 import net.minecraft.util.Identifier

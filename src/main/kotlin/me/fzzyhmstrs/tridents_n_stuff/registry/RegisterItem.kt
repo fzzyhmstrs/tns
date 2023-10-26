@@ -39,7 +39,9 @@ object RegisterItem {
 
     //Harpoon stuff
     val HARPOON_LAUNCHER = register(HarpoonLauncherItem(Item.Settings().maxDamage(325).rarity(Rarity.COMMON)),"harpoon_launcher")
-    val BONE_HARPOON = register(HarpoonItem(5.0,Item.Settings()),"bone_harpoon")
+    val BONE_HARPOON = register(HarpoonItem(5.0,RegisterEntity.BONE_HARPOON,Item.Settings()),"bone_harpoon")
+    val PRISMARINE_HARPOON = register(HarpoonItem(6.0,RegisterEntity.PRISMARINE_HARPOON,Item.Settings()),"prismarine_harpoon")
+    val DIAMOND_HARPOON = register(HarpoonItem(7.0,RegisterEntity.DIAMOND_HARPOON,Item.Settings()),"diamond_harpoon")
 
     //spear stuff
     val WOODEN_SPEAR = register(SpearItem(ToolMaterials.WOOD, -2, -2.9f, FabricItemSettings(), RegisterEntity.WOODEN_SPEAR), "wooden_spear")

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"  B",
+	" ST",
+	"S  "
+  ],
+  "key": {
+	"S": {
+	  "item": "minecraft:stick"
+	},
+	"B": {
+	  "item": "minecraft:prismarine_shard"
+	},
+	"T": {
+	  "item": "minecraft:string"
+	}
+  },
+  "result": {
+	"item": "tridents_n_stuff:prismarine_harpoon",
+    "count": 4
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+	"  B",
+	" ST",
+	"S  "
+  ],
+  "key": {
+	"S": {
+	  "item": "minecraft:stick"
+	},
+	"B": {
+	  "item": "minecraft:diamond"
+	},
+	"T": {
+	  "item": "minecraft:string"
+	}
+  },
+  "result": {
+	"item": "tridents_n_stuff:diamond_harpoon",
+    "count": 2
+  }
+}

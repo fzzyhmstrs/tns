@@ -1,8 +1,23 @@
 package me.fzzyhmstrs.amethyst_imbuement.item.custom
 
 import me.fzzyhmstrs.fzzy_core.item_util.interfaces.Flavorful
+import me.fzzyhmstrs.tridents_n_stuff.entity.SpearEntity
+import net.minecraft.enchantment.EnchantmentHelper
+import net.minecraft.entity.EntityType
+import net.minecraft.entity.LivingEntity
+import net.minecraft.entity.MovementType
+import net.minecraft.entity.player.PlayerEntity
+import net.minecraft.entity.projectile.PersistentProjectileEntity
+import net.minecraft.item.ItemStack
 import net.minecraft.item.SwordItem
 import net.minecraft.item.ToolMaterial
+import net.minecraft.sound.SoundCategory
+import net.minecraft.sound.SoundEvents
+import net.minecraft.stat.Stats
+import net.minecraft.util.UseAction
+import net.minecraft.util.math.MathHelper
+import net.minecraft.util.math.Vec3d
+import net.minecraft.world.World
 
 open class SpearItem(private val material: ToolMaterial, attackDamage: Int, attackSpeed: Float, settings: Settings, private val entityType: EntityType<SpearEntity>):
     SwordItem(material, attackDamage, attackSpeed, settings) {
@@ -21,10 +36,10 @@ open class SpearItem(private val material: ToolMaterial, attackDamage: Int, atta
     }
       
       fun makeSpearEntity(
-        material: ToolMaterial,
-        world: World,
-        livingEntity: LivingEntity,
-        stack: ItemStack
+          material: ToolMaterial,
+          world: World,
+          livingEntity: LivingEntity,
+          stack: ItemStack
     ): SpearEntity {
         return SpearEntity(entityType, world, livingEntity, stack).also { it.setDamage(material) }
     }    
