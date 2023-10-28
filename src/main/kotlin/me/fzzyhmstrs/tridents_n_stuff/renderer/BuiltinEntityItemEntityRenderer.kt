@@ -10,7 +10,7 @@ import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
 import net.minecraft.util.Identifier
 
-class CustomTridentItemEntityRenderer(private val item: Item, private val texture: Identifier): BuiltinItemRendererRegistry.DynamicItemRenderer {
+open class BuiltinEntityItemEntityRenderer(private val item: Item, private val texture: Identifier): BuiltinItemRendererRegistry.DynamicItemRenderer {
 
     private val modelLoader by lazy {
         ItemModelRegistry.getEntityModelLoader(item)

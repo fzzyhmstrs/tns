@@ -3,6 +3,8 @@ package me.fzzyhmstrs.tridents_n_stuff.config
 import me.fzzyhmstrs.fzzy_config.config_util.*
 import me.fzzyhmstrs.fzzy_config.interfaces.OldClass
 import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedDouble
+import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedFloat
+import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedInt
 import me.fzzyhmstrs.fzzy_config.validated_field.list.ValidatedStringList
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.material.TnsTridentMaterialsConfig
@@ -33,14 +35,19 @@ object TnsConfig:
 
     private val itemsHeader = buildSectionHeader("items")
 
-    class Items: ConfigClass(materialsHeader), OldClass<Items>{
+    class Items: ConfigClass(itemsHeader), OldClass<Items>{
 
         var harpoon = Harpoon()
         class Harpoon: ConfigSection(Header.Builder().space().add("tns.readme.items.harpoon_1").build()){
-            var baseDamage = ValidatedDouble(5.0,50.0,0.0)
+            var boneBaseDamage = ValidatedDouble(5.0,50.0,0.0)
+            var prismarineBaseDamage = ValidatedDouble(6.0,50.0,0.0)
+            var diamondBaseDamage = ValidatedDouble(7.0,50.0,0.0)
             var powerAdderPerLevel = ValidatedDouble(1.25,12.5,0.0)
             var powerBaseAdder = ValidatedDouble(1.0,10.0,0.0)
         }
+
+        var witherUniqueChance = ValidatedFloat(0.005f,1f,0f)
+        var chestUniqueChance = ValidatedFloat(0.001f,1f,0f)
 
         override fun generateNewClass(): Items {
             return this
@@ -90,6 +97,7 @@ object TnsConfig:
 
     }
 
+    var items = SyncedConfigHelperV1.readOrCreateAndValidate("items_v0.json", base = TNS.MOD_ID) { Items() }
     var materials = SyncedConfigHelperV1.readOrCreateAndValidate("materials_v0.json", base = TNS.MOD_ID) { Materials() }
     var modifiers = SyncedConfigHelperV1.readOrCreateAndValidate("modifiers_v0.json", base = TNS.MOD_ID) { Modifiers() }
 

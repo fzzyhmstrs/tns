@@ -22,6 +22,7 @@ object TNS: ModInitializer {
         RegisterItem.registerAll()
         RegisterModifier.registerAll()
         RegisterEntity.registerAll()
+        RegisterTag.registerAll()
     }
 
     fun random(): Random{
