@@ -25,7 +25,7 @@ import net.minecraft.util.math.Vec3d
 import net.minecraft.world.World
 
 open class CustomTridentEntity : PersistentProjectileEntity {
-    private var tridentStack = ItemStack.EMPTY.copy()
+    protected var tridentStack = ItemStack.EMPTY.copy()
     private var dealtDamage = false
     private var returnTimer = 0
     private var damage = 8f
