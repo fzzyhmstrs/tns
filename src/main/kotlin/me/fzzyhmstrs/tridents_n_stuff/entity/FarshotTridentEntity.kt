@@ -21,9 +21,4 @@ class FarshotTridentEntity: CustomTridentEntity {
         val vec3d4 = velocity
         this.setVelocity(vec3d4.x, vec3d4.y + 0.03, vec3d4.z)
     }
-
-    override fun onOwnedHit(owner: LivingEntity, target: LivingEntity){
-
-    }
-
 }
