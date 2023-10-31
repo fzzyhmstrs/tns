@@ -103,7 +103,12 @@ open class CustomTridentEntity : PersistentProjectileEntity {
     }
 
     open fun onOwnedHit(owner: LivingEntity, target: LivingEntity, source: DamageSource, amount: Float): Float{
-        return amount
+        var newAmount = amount
+        for (equipMod in EquipmentModifierHelper.getRelevantModifiers(owner,this.tridentStack)){
+            newAmount = equipMod.onAttack(this.tridentStack,owner,target,source, newAmount)
+            equipMod.postHit(this.tridentStack, owner, target)
+        }
+        return newAmount
     }
 
     override fun onEntityHit(entityHitResult: EntityHitResult) {
