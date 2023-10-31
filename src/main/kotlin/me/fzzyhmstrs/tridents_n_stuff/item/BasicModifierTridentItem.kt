@@ -7,16 +7,8 @@ import net.minecraft.item.ItemStack
 import net.minecraft.item.ToolMaterial
 import net.minecraft.world.World
 
-class BasicModifierTridentItem(material: ToolMaterial, attackSpeed: Double = -2.9, private val modifier: Identifier, settings: Settings) :
-    ModifiableTridentItem(material, attackSpeed, settings) {
-    /*override fun makeTridentEntity(
-        material: ToolMaterial,
-        world: World,
-        livingEntity: LivingEntity,
-        stack: ItemStack
-    ): SanguineTridentEntity {
-        return SanguineBondTridentEntity(world,livingEntity,stack).also { it.setDamage(material) }
-    }*/
+class BasicModifierTridentItem(material: ToolMaterial, attackSpeed: Double = -2.9, private val modifier: Identifier, settings: Settings, entityBuilder: EntityBuilder<CustomTridentEntity>) :
+    BasicCustomTridentItem(material, attackSpeed, settings, entityBuilder), Modifiable {
 
     override fun defaultModifiers(type: ModifierHelperType<*>?): MutableList<Identifier> {
         if (type == EquipmentModifierHelper.getType()) return mutableListOf(modifier)
