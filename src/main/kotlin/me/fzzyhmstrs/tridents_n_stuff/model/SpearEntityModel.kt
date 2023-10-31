@@ -19,23 +19,28 @@ class SpearEntityModel(private val root: ModelPart) : TridentEntityModel(root) {
                 ModelTransform.NONE
             )
             modelPartData2.addChild(
-                "base",
-                ModelPartBuilder.create().uv(4, 0).cuboid(-1.5f, 0.0f, -0.5f, 3.0f, 2.0f, 1.0f),
+                "base_left",
+                ModelPartBuilder.create().uv(4, 0).cuboid(-2.5f, 4.0f, -0.5f, 2.0f, 1.0f, 1.0f),
+                ModelTransform.NONE
+            )
+            modelPartData2.addChild(
+                "base_right",
+                ModelPartBuilder.create().uv(4, 0).cuboid(0.5f, 4.0f, -0.5f, 2.0f, 1.0f, 1.0f),
                 ModelTransform.NONE
             )
             modelPartData2.addChild(
                 "left_spike",
-                ModelPartBuilder.create().uv(4, 3).cuboid(-2.5f, -3.0f, -0.5f, 1.0f, 4.0f, 1.0f),
+                ModelPartBuilder.create().uv(4, 3).cuboid(-1.5f, -1.0f, -0.5f, 1.0f, 3.0f, 1.0f),
                 ModelTransform.NONE
             )
             modelPartData2.addChild(
                 "middle_spike",
-                ModelPartBuilder.create().uv(0, 0).cuboid(-0.5f, -4.0f, -0.5f, 1.0f, 4.0f, 1.0f),
+                ModelPartBuilder.create().uv(0, 0).cuboid(-0.5f, -3.0f, -0.5f, 1.0f, 5.0f, 1.0f),
                 ModelTransform.NONE
             )
             modelPartData2.addChild(
                 "right_spike",
-                ModelPartBuilder.create().uv(4, 3).mirrored().cuboid(1.5f, -3.0f, -0.5f, 1.0f, 4.0f, 1.0f),
+                ModelPartBuilder.create().uv(4, 3).mirrored().cuboid(0.5f, -1.0f, -0.5f, 1.0f, 3.0f, 1.0f),
                 ModelTransform.NONE
             )
             return TexturedModelData.of(modelData, 32, 32)
