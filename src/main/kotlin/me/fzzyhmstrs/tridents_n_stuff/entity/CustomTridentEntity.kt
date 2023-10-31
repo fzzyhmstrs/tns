@@ -102,19 +102,25 @@ open class CustomTridentEntity : PersistentProjectileEntity {
         } else super.getEntityCollision(currentPosition, nextPosition)
     }
 
-    open fun onOwnedHit(owner: LivingEntity, target: LivingEntity){
-
+    open fun onOwnedHit(owner: LivingEntity, target: LivingEntity, source: DamageSource, amount: Float): Float{
+        return amount
     }
 
     override fun onEntityHit(entityHitResult: EntityHitResult) {
         val blockPos: BlockPos?
         val entity = entityHitResult.entity
         var f = this.damage
-        if (entity is LivingEntity) {
-            f += EnchantmentHelper.getAttackDamage(tridentStack, entity.group)
-        }
         val livingEntity: Entity? = owner
         val damageSource = this.damageSources.trident(this, if (owner == null) this else livingEntity)
+        if (entity is LivingEntity) {
+            f += EnchantmentHelper.getAttackDamage(tridentStack, entity.group)
+            f = if (livingEntity is LivingEntity) {
+                onOwnedHit(livingEntity, entity, damageSource, f)
+            } else {
+                f
+            }
+        }
+        
         dealtDamage = true
         var soundEvent = SoundEvents.ITEM_TRIDENT_HIT
         if (entity.damage(damageSource, f)) {
@@ -125,7 +131,6 @@ open class CustomTridentEntity : PersistentProjectileEntity {
                 if (livingEntity is LivingEntity) {
                     EnchantmentHelper.onUserDamaged(entity, livingEntity)
                     EnchantmentHelper.onTargetDamaged(livingEntity, entity)
-                    onOwnedHit(livingEntity,entity)
                 }
                 onHit(entity)
             }
