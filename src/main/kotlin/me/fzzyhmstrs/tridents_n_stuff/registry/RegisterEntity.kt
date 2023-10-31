@@ -21,29 +21,29 @@ object RegisterEntity {
 
     }
 
-    val STORMSEEKER: EntityType<StormseekerTridentEntity> = register(
-        { entityType: EntityType<StormseekerTridentEntity>, world: World ->
-            StormseekerTridentEntity(entityType,world)
+    val STORMSEEKER: EntityType<CustomTridentEntity> = register(
+        { entityType: EntityType<CustomTridentEntity>, world: World ->
+            CustomTridentEntity(entityType,world)
         }, "stormseeker_entity")
 
-    val THE_DESECRATOR: EntityType<DesecratorTridentEntity> = register(
-        { entityType: EntityType<DesecratorTridentEntity>, world: World ->
-            DesecratorTridentEntity(entityType,world)
+    val THE_DESECRATOR: EntityType<CustomTridentEntity> = register(
+        { entityType: EntityType<CustomTridentEntity>, world: World ->
+            CustomTridentEntity(entityType,world)
         }, "the_desecrator_entity")
 
-    val ECHO_OF_THE_DEEP: EntityType<EchoOfTheDeepTridentEntity> = register(
-        { entityType: EntityType<EchoOfTheDeepTridentEntity>, world: World ->
-            EchoOfTheDeepTridentEntity(entityType,world)
+    val ECHO_OF_THE_DEEP: EntityType<CustomTridentEntity> = register(
+        { entityType: EntityType<CustomTridentEntity>, world: World ->
+            CustomTridentEntity(entityType,world)
         }, "echo_of_the_deep_entity")
     
-    val STELLARIS: EntityType<StellarisTridentEntity> = register(
-        { entityType: EntityType<StellarisTridentEntity>, world: World ->
-            StellarisTridentEntity(entityType,world)
+    val STELLARIS: EntityType<CustomTridentEntity> = register(
+        { entityType: EntityType<CustomTridentEntity>, world: World ->
+            CustomTridentEntity(entityType,world)
         }, "stellaris_entity")
 
-    val SANGUINE_BOND: EntityType<SanguineBondTridentEntity> = register(
-        { entityType: EntityType<SanguineBondTridentEntity>, world: World ->
-            SanguineBondTridentEntity(entityType,world)
+    val SANGUINE_BOND: EntityType<CustomTridentEntity> = register(
+        { entityType: EntityType<CustomTridentEntity>, world: World ->
+            CustomTridentEntity(entityType,world)
         }, "sanguine_bond_entity")
 
     //////////////////////
