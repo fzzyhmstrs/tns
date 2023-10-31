@@ -17,7 +17,7 @@ import kotlin.math.max
 
 object ModifierFunctions {
 
-    val BLOODTHIRSTY_ATTACK_FUNCTION: EquipmentModifier.DamageFunction =
+    val SANGUINE_ATTACK_FUNCTION: EquipmentModifier.DamageFunction =
         EquipmentModifier.DamageFunction { _, user, attacker, _, amount ->
             if (attacker == null) return@DamageFunction amount
             val bleed = attacker.getStatusEffect(TNS.BLEEDING)
