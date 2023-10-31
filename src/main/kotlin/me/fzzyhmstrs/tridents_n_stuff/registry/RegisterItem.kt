@@ -23,17 +23,17 @@ object RegisterItem {
         return Registry.register(Registries.ITEM, TNS.identity(name), item)
     }
     // unique tridents
-    val STORMSEEKER = register(StormseekerTridentItem(TnsConfig.materials.stormseeker,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "stormseeker")
-    val THE_DESECRATOR = register(DesecratorTridentItem(TnsConfig.materials.desecrator,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "the_desecrator")
-    val ECHO_OF_THE_DEEP = register(EchoOfTheDeepTridentItem(TnsConfig.materials.echo,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "echo_of_the_deep")
-    val STELLARIS = register(StellarisTridentItem(TnsConfig.materials.stellaris,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "stellaris")
-    val SANGUINE_BOND = register(SanguineBondTridentItem(TnsConfig.materials.sanguine,-2.9,FabricItemSettings().rarity(Rarity.RARE)), "sanguine_bond")
+    val STORMSEEKER = register(BasicModifiableTridentItem(TnsConfig.materials.stormseeker,-2.9, RegisterModifier.STELLAR.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.STORMSEEKER, w,e,s) }, "stormseeker")
+    val THE_DESECRATOR = register(BasicModifiableTridentItem(TnsConfig.materials.desecrator,-2.9, RegisterModifier.VILE.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.THE_DESECRATOR, w,e,s) }, "the_desecrator")
+    val ECHO_OF_THE_DEEP = register(BasicModifiableTridentItem(TnsConfig.materials.echo,-2.9, RegisterModifier.ECHOING.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.ECHO_OF_THE_DEEP, w,e,s) }, "echo_of_the_deep")
+    val STELLARIS = register(BasicModifiableTridentItem(TnsConfig.materials.stellaris,-2.9, RegisterModifier.STELLAR.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.STELLARIS, w,e,s) }, "stellaris")
+    val SANGUINE_BOND = register(BasicModifiableTridentItem(TnsConfig.materials.sanguine,-2.9, RegisterModifier.SANGUINE.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.SANGUINE_BOND, w,e,s) }, "sanguine_bond")
 
     //crafted tridents
     val FRENZIED_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.frenzied,-1.6,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.FRENZIED_TRIDENT, w,e,s) }, "frenzied_trident")
     val ANCIENT_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.ancient,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.ANCIENT_TRIDENT, w,e,s) }, "ancient_trident")
-    val OCEANIC_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.oceanic,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.OCEANIC_TRIDENT, w,e,s) }, "oceanic_trident")
-    val HOLY_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.holy,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.HOLY_TRIDENT, w,e,s)}, "holy_trident")
+    val OCEANIC_TRIDENT = register(BasicModifiableTridentItem(TnsConfig.materials.oceanic,-2.9, RegisterModifier.OCEANIC.modifierId, FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.OCEANIC_TRIDENT, w,e,s) }, "oceanic_trident")
+    val HOLY_TRIDENT = register(BasicModifiableTridentItem(TnsConfig.materials.holy,-2.9, RegisterModifier.HOLY.modifierId, FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.HOLY_TRIDENT, w,e,s)}, "holy_trident")
     val FARSHOT_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.farshot,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> FarshotTridentEntity(w,e,s) }, "farshot_trident")
 
     //Harpoon stuff
