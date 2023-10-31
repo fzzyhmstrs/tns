@@ -8,13 +8,18 @@ import net.minecraft.item.ToolMaterial
 import net.minecraft.world.World
 
 class SanguineBondTridentItem(material: ToolMaterial, attackSpeed: Double = -2.9, settings: Settings) :
-    CustomTridentItem<DesecratorTridentEntity>(material, attackSpeed, settings) {
+    CustomTridentItem<SanguineBondTridentEntity>(material, attackSpeed, settings) {
     override fun makeTridentEntity(
         material: ToolMaterial,
         world: World,
         livingEntity: LivingEntity,
         stack: ItemStack
-    ): DesecratorTridentEntity {
-        return DesecratorTridentEntity(world,livingEntity,stack).also { it.setDamage(material) }
+    ): SanguineTridentEntity {
+        return SanguineBondTridentEntity(world,livingEntity,stack).also { it.setDamage(material) }
+    }
+
+    override fun defaultModifiers(type: ModifierHelperType<*>?): MutableList<Identifier> {
+        if (type == EquipmentModifierHelper.getType()) return mutableListOf(RegisterModifier.SANGUINE.modifierId)
+        return super.defaultModifiers(type)
     }
 }
