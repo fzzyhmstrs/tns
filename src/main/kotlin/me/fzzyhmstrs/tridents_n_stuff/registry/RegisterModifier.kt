@@ -31,4 +31,19 @@ object RegisterModifier {
 
     }
 
+    val SANGUINE = buildModifier(TNS.identity("sanguine"), persistent = true, randomSelectable = false)
+        .withOnAttack(ModifierFunctions.SANGUINE_ATTACK_FUNCTION)
+        .withCustomFormatting(Formatting.RED, Formatting.BOLD)
+        .also { regMod.add(it) }
+
+    val HOLY = buildModifier(TNS.identity("holy"), persistent = true, randomSelectable = false)
+        .withOnAttack(ModifierFunctions.HOLY_ATTACK_FUNCTION)
+        .withCustomFormatting(Formatting.YELLOW, Formatting.BOLD)
+        .also { regMod.add(it) }
+
+    val OCEANIC = buildModifier(TNS.identity("oceanic"), persistent = true, randomSelectable = false)
+        .withOnAttack(ModifierFunctions.OCEANIC_ATTACK_FUNCTION)
+        .withCustomFormatting(Formatting.AQUA, Formatting.BOLD)
+        .also { regMod.add(it) }
+
 }
