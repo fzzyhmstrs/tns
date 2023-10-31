@@ -44,5 +44,17 @@
 	"item.tridents_n_stuff.iron_spear": "Iron Spear",
 	"item.tridents_n_stuff.golden_spear": "Golden Spear",
 	"item.tridents_n_stuff.diamond_spear": "Diamond Spear",
-	"item.tridents_n_stuff.netherite_spear": "Netherite Spear"
+	"item.tridents_n_stuff.netherite_spear": "Netherite Spear",
+
+
+	"equipment.modifier.tridents_n_stuff:sanguine": "Sanguine",
+	"equipment.modifier.tridents_n_stuff:stellar": "Stellar",
+	"equipment.modifier.tridents_n_stuff:holy": "Holy",
+	"equipment.modifier.tridents_n_stuff:oceanic": "Oceanic",
+	
+
+	"equipment.modifier.tridents_n_stuff:sanguine.desc": "Stacks levels of Bleeding. Deals additional damage and heals the weilder based on Bleeding stacks.",
+	"equipment.modifier.tridents_n_stuff:stellar.desc": "Pulls all mobs near the target towards the target. Attacks have a small radius of AOE damage.",
+	"equipment.modifier.tridents_n_stuff:holy.desc": "Deals 50% increased damage to undead.",
+	"equipment.modifier.tridents_n_stuff:oceanic.desc": "Deals 50% increased damage to aquatic mobs."
 }
