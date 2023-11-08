@@ -1,17 +1,16 @@
 package me.fzzyhmstrs.tridents_n_stuff.entity
 
+import me.fzzyhmstrs.gear_core.modifier_util.EquipmentModifierHelper
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LightningEntity
 import net.minecraft.entity.LivingEntity
+import net.minecraft.entity.damage.DamageSource
 import net.minecraft.entity.data.DataTracker
 import net.minecraft.entity.data.TrackedDataHandlerRegistry
-import net.minecraft.entity.effect.StatusEffectInstance
-import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.projectile.PersistentProjectileEntity
-import net.minecraft.entity.projectile.TridentEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.item.ToolMaterial
 import net.minecraft.nbt.NbtCompound
@@ -111,6 +110,12 @@ open class CustomTridentEntity : PersistentProjectileEntity {
         return newAmount
     }
 
+    open fun onOwnedKill(owner: LivingEntity, target: LivingEntity) {
+        for (equipMod in EquipmentModifierHelper.getRelevantModifiers(owner,this.tridentStack)){
+            equipMod.killedOther(this.tridentStack, owner, target)
+        }
+    }
+
     override fun onEntityHit(entityHitResult: EntityHitResult) {
         val blockPos: BlockPos?
         val entity = entityHitResult.entity
@@ -136,6 +141,8 @@ open class CustomTridentEntity : PersistentProjectileEntity {
                 if (livingEntity is LivingEntity) {
                     EnchantmentHelper.onUserDamaged(entity, livingEntity)
                     EnchantmentHelper.onTargetDamaged(livingEntity, entity)
+                    if (entity.isDead)
+                        onOwnedKill(livingEntity,entity)
                 }
                 onHit(entity)
             }

@@ -46,12 +46,20 @@
 	"item.tridents_n_stuff.diamond_spear": "Diamond Spear",
 	"item.tridents_n_stuff.netherite_spear": "Netherite Spear",
 
+	"equipment.modifier.tridents_n_stuff:storm_blessed": "Storm-Blessed",
+	"equipment.modifier.tridents_n_stuff:vile": "Vile",
+	"equipment.modifier.tridents_n_stuff:echoing": "Echoing",
+
+	"equipment.modifier.tridents_n_stuff:storm_blessed.desc": "Calls down a lightning bolt on attacking.",
+	"equipment.modifier.tridents_n_stuff:vile.desc": "Weakens struck enemies and withers them.",
+	"equipment.modifier.tridents_n_stuff:echoing.desc": "Deals magic damage to all mobs near the struck target.",
+
 
 	"equipment.modifier.tridents_n_stuff:sanguine": "Sanguine",
 	"equipment.modifier.tridents_n_stuff:stellar": "Stellar",
 	"equipment.modifier.tridents_n_stuff:holy": "Holy",
 	"equipment.modifier.tridents_n_stuff:oceanic": "Oceanic",
-	
+
 
 	"equipment.modifier.tridents_n_stuff:sanguine.desc": "Stacks levels of Bleeding. Deals additional damage and heals the weilder based on Bleeding stacks.",
 	"equipment.modifier.tridents_n_stuff:stellar.desc": "Pulls all mobs near the target towards the target. Attacks have a small radius of AOE damage.",

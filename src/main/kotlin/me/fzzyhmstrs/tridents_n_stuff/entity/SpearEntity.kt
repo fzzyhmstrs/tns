@@ -3,20 +3,15 @@ package me.fzzyhmstrs.tridents_n_stuff.entity
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
-import net.minecraft.entity.LightningEntity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.data.DataTracker
 import net.minecraft.entity.data.TrackedDataHandlerRegistry
-import net.minecraft.entity.effect.StatusEffectInstance
-import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.projectile.PersistentProjectileEntity
-import net.minecraft.entity.projectile.TridentEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.item.ToolMaterial
 import net.minecraft.nbt.NbtCompound
 import net.minecraft.server.network.ServerPlayerEntity
-import net.minecraft.server.world.ServerWorld
 import net.minecraft.sound.SoundEvent
 import net.minecraft.sound.SoundEvents
 import net.minecraft.util.hit.EntityHitResult
@@ -138,8 +133,7 @@ open class SpearEntity : PersistentProjectileEntity {
     }
 
     public override fun age() {
-        val i = dataTracker.get(LOYALTY)
-        if (pickupType != PickupPermission.ALLOWED || i <= 0) {
+        if (pickupType != PickupPermission.ALLOWED) {
             super.age()
         }
     }

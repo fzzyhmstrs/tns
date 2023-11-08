@@ -1,7 +1,10 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
 import me.fzzyhmstrs.tridents_n_stuff.TNS
-import me.fzzyhmstrs.tridents_n_stuff.entity.*
+import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity
+import me.fzzyhmstrs.tridents_n_stuff.entity.FarshotTridentEntity
+import me.fzzyhmstrs.tridents_n_stuff.entity.HarpoonEntity
+import me.fzzyhmstrs.tridents_n_stuff.entity.SpearEntity
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricEntityTypeBuilder
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityDimensions

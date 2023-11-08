@@ -2,7 +2,6 @@ package me.fzzyhmstrs.tridents_n_stuff.renderer
 
 import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity
 import me.fzzyhmstrs.tridents_n_stuff.model.CustomFancyTridentEntityModel
-import me.fzzyhmstrs.tridents_n_stuff.model.CustomTridentEntityModel
 import me.fzzyhmstrs.tridents_n_stuff.registry.RegisterRenderer
 import net.minecraft.client.render.OverlayTexture
 import net.minecraft.client.render.VertexConsumerProvider

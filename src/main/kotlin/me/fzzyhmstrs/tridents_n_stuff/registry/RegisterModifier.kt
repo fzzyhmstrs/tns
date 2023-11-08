@@ -2,9 +2,13 @@ package me.fzzyhmstrs.tridents_n_stuff.registry
 
 import me.fzzyhmstrs.fzzy_core.modifier_util.AbstractModifier
 import me.fzzyhmstrs.gear_core.modifier_util.EquipmentModifier
+import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.modifier.ConfigEquipmentModifier
+import me.fzzyhmstrs.tridents_n_stuff.modifier.ModifierConsumers
+import me.fzzyhmstrs.tridents_n_stuff.modifier.ModifierFunctions
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider
 import net.minecraft.loot.provider.number.UniformLootNumberProvider
+import net.minecraft.util.Formatting
 import net.minecraft.util.Identifier
 
 object RegisterModifier {
@@ -27,23 +31,44 @@ object RegisterModifier {
         return ConfigEquipmentModifier(modifierId,target,weight,rarity,persistent, availableForSelection)
     }
 
+    val STORM_BLESSED = buildModifier(TNS.identity("storm_blessed"), persistent = true, availableForSelection = false)
+        .withPostHit(ModifierConsumers.STORM_BLESSED_KILL_CONSUMER)
+        .withCustomFormatting(Formatting.BLUE)
+        .also { regMod.add(it) }
+
+    val VILE = buildModifier(TNS.identity("vile"), persistent = true, availableForSelection = false)
+        .withPostHit(ModifierConsumers.VILE_HIT_CONSUMER)
+        .withKilledOther(ModifierConsumers.VILE_KILL_CONSUMER)
+        .withCustomFormatting(Formatting.DARK_RED)
+        .also { regMod.add(it) }
+
+    val ECHOING = buildModifier(TNS.identity("echoing"), persistent = true, availableForSelection = false)
+        .withPostHit(ModifierConsumers.ECHO_HIT_CONSUMER)
+        .withCustomFormatting(Formatting.AQUA)
+        .also { regMod.add(it) }
+
     fun registerAll(){
 
     }
 
-    val SANGUINE = buildModifier(TNS.identity("sanguine"), persistent = true, randomSelectable = false)
+    val SANGUINE = buildModifier(TNS.identity("sanguine"), persistent = true, availableForSelection = false)
         .withOnAttack(ModifierFunctions.SANGUINE_ATTACK_FUNCTION)
         .withCustomFormatting(Formatting.RED, Formatting.BOLD)
         .also { regMod.add(it) }
 
-    val HOLY = buildModifier(TNS.identity("holy"), persistent = true, randomSelectable = false)
+    val HOLY = buildModifier(TNS.identity("holy"), persistent = true, availableForSelection = false)
         .withOnAttack(ModifierFunctions.HOLY_ATTACK_FUNCTION)
         .withCustomFormatting(Formatting.YELLOW, Formatting.BOLD)
         .also { regMod.add(it) }
 
-    val OCEANIC = buildModifier(TNS.identity("oceanic"), persistent = true, randomSelectable = false)
+    val OCEANIC = buildModifier(TNS.identity("oceanic"), persistent = true, availableForSelection = false)
         .withOnAttack(ModifierFunctions.OCEANIC_ATTACK_FUNCTION)
         .withCustomFormatting(Formatting.AQUA, Formatting.BOLD)
+        .also { regMod.add(it) }
+
+    val STELLAR = buildModifier(TNS.identity("stellar"), persistent = true, availableForSelection = false)
+        .withPostHit(ModifierConsumers.STELLAR_HIT_CONSUMER)
+        .withCustomFormatting(Formatting.DARK_PURPLE, Formatting.BOLD)
         .also { regMod.add(it) }
 
 }

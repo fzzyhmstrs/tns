@@ -1,10 +1,10 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
-import me.fzzyhmstrs.amethyst_imbuement.item.custom.SpearItem
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.entity.*
 import me.fzzyhmstrs.tridents_n_stuff.item.CustomTridentItem
-import me.fzzyhmstrs.tridents_n_stuff.item.HarpoonItem
+import me.fzzyhmstrs.tridents_n_stuff.item.HarpoonLauncherItem
+import me.fzzyhmstrs.tridents_n_stuff.item.SpearItem
 import me.fzzyhmstrs.tridents_n_stuff.model.CustomFancyTridentEntityModel
 import me.fzzyhmstrs.tridents_n_stuff.model.CustomTridentEntityModel
 import me.fzzyhmstrs.tridents_n_stuff.model.SpearEntityModel
@@ -32,23 +32,23 @@ object RegisterRenderer {
 
         EntityRendererRegistry.register(
             RegisterEntity.STORMSEEKER
-        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<StormseekerTridentEntity>(TNS.identity("textures/trident/stormseeker.png"),context) }
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/stormseeker.png"),context) }
 
         EntityRendererRegistry.register(
             RegisterEntity.THE_DESECRATOR
-        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<DesecratorTridentEntity>(TNS.identity("textures/trident/desecrator.png"),context) }
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/desecrator.png"),context) }
 
         EntityRendererRegistry.register(
             RegisterEntity.ECHO_OF_THE_DEEP
-        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<EchoOfTheDeepTridentEntity>(TNS.identity("textures/trident/echo.png"),context) }
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/echo.png"),context) }
 
         EntityRendererRegistry.register(
             RegisterEntity.STELLARIS
-        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<StellarisTridentEntity>(TNS.identity("textures/trident/stellaris.png"),context) }
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/stellaris.png"),context) }
 
         EntityRendererRegistry.register(
             RegisterEntity.SANGUINE_BOND
-        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<SanguineBondTridentEntity>(TNS.identity("textures/trident/sanguine.png"),context) }
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/sanguine.png"),context) }
 
         //////////
 
@@ -95,10 +95,24 @@ object RegisterRenderer {
         /////////////
 
         for (item in RegisterItem.getItems()){
-            if (!(item is CustomTridentItem<*> || item is HarpoonItem || item is SpearItem)) continue
+            if (!(item is CustomTridentItem<*> || item is HarpoonLauncherItem || item is SpearItem)) continue
             ModelPredicateProviderRegistry.register(
                 item, Identifier("throwing")
             ) { stack: ItemStack, _: ClientWorld?, entity: LivingEntity?, _: Int -> if (entity != null && entity.isUsingItem && entity.activeItem == stack) 1.0f else 0.0f }
+        }
+        ModelPredicateProviderRegistry.register(
+            RegisterItem.STORMSEEKER, Identifier("crackling")
+        ) { stack: ItemStack, _: ClientWorld?, _: LivingEntity?, _: Int ->
+            val nbt = stack.nbt
+            if (nbt == null){
+                0.0f
+            } else {
+                if (nbt.getBoolean("crackling")){
+                    1f
+                } else {
+                    0f
+                }
+            }
         }
     }
 

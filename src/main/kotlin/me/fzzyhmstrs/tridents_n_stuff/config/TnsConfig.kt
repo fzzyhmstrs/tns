@@ -1,10 +1,12 @@
 package me.fzzyhmstrs.tridents_n_stuff.config
 
-import me.fzzyhmstrs.fzzy_config.config_util.*
+import me.fzzyhmstrs.fzzy_config.config_util.ConfigClass
+import me.fzzyhmstrs.fzzy_config.config_util.ConfigSection
+import me.fzzyhmstrs.fzzy_config.config_util.SyncedConfigHelperV1
+import me.fzzyhmstrs.fzzy_config.config_util.SyncedConfigWithReadMe
 import me.fzzyhmstrs.fzzy_config.interfaces.OldClass
 import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedDouble
 import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedFloat
-import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedInt
 import me.fzzyhmstrs.fzzy_config.validated_field.list.ValidatedStringList
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.material.TnsTridentMaterialsConfig
@@ -45,6 +47,8 @@ object TnsConfig:
             var powerAdderPerLevel = ValidatedDouble(1.25,12.5,0.0)
             var powerBaseAdder = ValidatedDouble(1.0,10.0,0.0)
         }
+
+
 
         var witherUniqueChance = ValidatedFloat(0.005f,1f,0f)
         var chestUniqueChance = ValidatedFloat(0.001f,1f,0f)

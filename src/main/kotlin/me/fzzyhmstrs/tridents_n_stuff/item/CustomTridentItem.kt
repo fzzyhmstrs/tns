@@ -2,6 +2,7 @@ package me.fzzyhmstrs.tridents_n_stuff.item
 
 import com.google.common.collect.ImmutableMultimap
 import com.google.common.collect.Multimap
+import me.fzzyhmstrs.fzzy_core.interfaces.Modifiable
 import me.fzzyhmstrs.fzzy_core.item_util.FlavorHelper
 import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity
 import net.minecraft.client.item.TooltipContext
@@ -27,7 +28,7 @@ import net.minecraft.util.math.MathHelper
 import net.minecraft.util.math.Vec3d
 import net.minecraft.world.World
 
-abstract class CustomTridentItem<T: CustomTridentEntity>(private val material: ToolMaterial, attackSpeed: Double = -2.9, settings: Settings) : TridentItem(settings.maxDamageIfAbsent(material.durability)) {
+abstract class CustomTridentItem<T: CustomTridentEntity>(private val material: ToolMaterial, attackSpeed: Double = -2.9, settings: Settings) : TridentItem(settings.maxDamageIfAbsent(material.durability)), Modifiable {
  private val attributeModifiers: Multimap<EntityAttribute, EntityAttributeModifier>
 
     private val flavorText: MutableText by lazy{

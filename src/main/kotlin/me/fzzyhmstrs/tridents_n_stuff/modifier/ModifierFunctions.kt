@@ -1,18 +1,9 @@
-package me.fzzyhmstrs.imbued_gear.modifier
+package me.fzzyhmstrs.tridents_n_stuff.modifier
 
 import me.fzzyhmstrs.gear_core.modifier_util.EquipmentModifier
-import me.fzzyhmstrs.imbued_gear.config.IgConfig
-import me.fzzyhmstrs.imbued_gear.registry.RegisterStatus
-import me.fzzyhmstrs.imbued_gear.registry.RegisterTag
+import me.fzzyhmstrs.tridents_n_stuff.TNS
 import net.minecraft.entity.EntityGroup
 import net.minecraft.entity.effect.StatusEffectInstance
-import net.minecraft.entity.effect.StatusEffects
-import net.minecraft.entity.projectile.PersistentProjectileEntity
-import net.minecraft.registry.tag.DamageTypeTags
-import net.minecraft.registry.tag.EntityTypeTags
-import net.minecraft.sound.SoundCategory
-import net.minecraft.sound.SoundEvents
-import java.util.*
 import kotlin.math.max
 
 object ModifierFunctions {

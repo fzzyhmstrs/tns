@@ -1,6 +1,5 @@
 package me.fzzyhmstrs.tridents_n_stuff.item
 
-import me.fzzyhmstrs.fzzy_core.item_util.interfaces.Flavorful
 import me.fzzyhmstrs.tridents_n_stuff.entity.SpearEntity
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.EntityType

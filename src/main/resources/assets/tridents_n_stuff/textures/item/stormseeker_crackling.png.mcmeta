@@ -1,0 +1,29 @@
+{
+  "animation": {
+	  "frametime": 1,
+	  "frames": [
+          {"index": 0, "time": 8},
+		  1,
+		  0,
+		  1,
+		  {"index": 0, "time": 24},
+		  2,
+		  0,
+		  2,
+		  0,
+		  3,
+		  {"index": 0, "time": 18},
+		  4,
+		  {"index": 0, "time": 33},
+		  3,
+		  0,
+		  1,
+		  {"index": 0, "time": 12},
+		  4,
+		  0,
+		  4,
+		  0,
+		  2
+	  ]
+  }
+}

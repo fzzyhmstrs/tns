@@ -11,7 +11,6 @@ import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.entity.projectile.PersistentProjectileEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.network.packet.s2c.play.GameStateChangeS2CPacket
-import net.minecraft.registry.RegistryOps.RegistryInfoGetter
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.sound.SoundEvent
 import net.minecraft.sound.SoundEvents
