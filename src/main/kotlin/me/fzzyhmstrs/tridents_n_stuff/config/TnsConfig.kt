@@ -48,6 +48,14 @@ object TnsConfig:
             var powerBaseAdder = ValidatedDouble(1.0,10.0,0.0)
         }
 
+        var oceanBossLootTables = ValidatedIdentifierList(
+            listOf(
+                EntityType.ELDER_GUARDIAN.lootTableId              
+            ),
+            {id -> Identifier.tryParse(id) != null},
+            "Needs to be a valid identifier string"
+        )
+
         var oceanChestLootTables = ValidatedIdentifierList(
             listOf(
                 LootTables.SHIPWRECK_SUPPLY_CHEST,
