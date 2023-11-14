@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "tridents_n_stuff:item/icon_of_stars"
+  }
+}
