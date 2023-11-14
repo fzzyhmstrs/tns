@@ -24,6 +24,11 @@ object RegisterEntity {
 
     }
 
+    val SLUMBERING_TRIDENT: EntityType<CustomTridentEntity> = register(
+        { entityType: EntityType<CustomTridentEntity>, world: World ->
+            CustomTridentEntity(entityType,world)
+        }, "slumbering_trident_entity")
+    
     val STORMSEEKER: EntityType<CustomTridentEntity> = register(
         { entityType: EntityType<CustomTridentEntity>, world: World ->
             CustomTridentEntity(entityType,world)
