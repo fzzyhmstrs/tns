@@ -7,6 +7,7 @@ import net.minecraft.registry.tag.TagKey
 object RegisterTag {
 
     val UNIQUE_TRIDENTS = TagKey.of(RegistryKeys.ITEM, TNS.identity("unique_tridents"))
+    val ICONS = TagKey.of(RegistryKeys.ITEM, TNS.identity("icons"))
 
     fun registerAll(){}
 
