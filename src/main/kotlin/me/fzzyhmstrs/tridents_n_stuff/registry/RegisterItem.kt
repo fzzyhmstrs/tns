@@ -22,12 +22,20 @@ object RegisterItem {
         return Registry.register(Registries.ITEM, TNS.identity(name), item)
     }
     // unique tridents
+    val SLUMBERING_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.slumbering,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.SLUMBERING_TRIDENT, w,e,s) }, "slumbering_trident")
     val STORMSEEKER = register(BasicModifierTridentItem(TnsConfig.materials.stormseeker,-2.9, RegisterModifier.STORM_BLESSED.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.STORMSEEKER, w,e,s) }, "stormseeker")
     val THE_DESECRATOR = register(BasicModifierTridentItem(TnsConfig.materials.desecrator,-2.9, RegisterModifier.VILE.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.THE_DESECRATOR, w,e,s) }, "the_desecrator")
     val ECHO_OF_THE_DEEP = register(BasicModifierTridentItem(TnsConfig.materials.echo,-2.9, RegisterModifier.ECHOING.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.ECHO_OF_THE_DEEP, w,e,s) }, "echo_of_the_deep")
     val STELLARIS = register(BasicModifierTridentItem(TnsConfig.materials.stellaris,-2.9, RegisterModifier.STELLAR.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.STELLARIS, w,e,s) }, "stellaris")
     val SANGUINE_BOND = register(BasicModifierTridentItem(TnsConfig.materials.sanguine,-2.9, RegisterModifier.SANGUINE.modifierId, FabricItemSettings().rarity(Rarity.RARE)) {w,e,s -> CustomTridentEntity(RegisterEntity.SANGUINE_BOND, w,e,s) }, "sanguine_bond")
 
+    //icons
+    val ICON_OF_STORMS = register(CustomFlavorItem(FabricItemSettings().rarity(Rarity.UNCOMMON)),"icon_of_storms")
+    val ICON_OF_EVIL = register(CustomFlavorItem(FabricItemSettings().rarity(Rarity.UNCOMMON)),"icon_of_evil")
+    val ICON_OF_DEPTHS = register(CustomFlavorItem(FabricItemSettings().rarity(Rarity.UNCOMMON)),"icon_of_depths")
+    val ICON_OF_STARS = register(CustomFlavorItem(FabricItemSettings().rarity(Rarity.UNCOMMON)),"icon_of_stars")
+    val ICON_OF_BLOOD = register(CustomFlavorItem(FabricItemSettings().rarity(Rarity.UNCOMMON)),"icon_of_blood")
+    
     //crafted tridents
     val FRENZIED_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.frenzied,-1.6,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.FRENZIED_TRIDENT, w,e,s) }, "frenzied_trident")
     val ANCIENT_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.ancient,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.ANCIENT_TRIDENT, w,e,s) }, "ancient_trident")
