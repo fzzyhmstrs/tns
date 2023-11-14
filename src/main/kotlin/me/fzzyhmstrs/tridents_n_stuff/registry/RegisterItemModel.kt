@@ -41,6 +41,7 @@ object RegisterItemModel {
     }
 
     fun registerAll(){
+        registerFancy("slumbering_trident",RegisterItem.SLUMBERING_TRIDENT)
         registerFancy("stormseeker",RegisterItem.STORMSEEKER)
         registerFancy("the_desecrator",RegisterItem.THE_DESECRATOR)
         registerFancy("echo_of_the_deep",RegisterItem.ECHO_OF_THE_DEEP)
