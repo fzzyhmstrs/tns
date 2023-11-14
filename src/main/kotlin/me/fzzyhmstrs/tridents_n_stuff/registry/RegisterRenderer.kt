@@ -32,6 +32,10 @@ object RegisterRenderer {
     fun registerAll(){
 
         EntityRendererRegistry.register(
+            RegisterEntity.SLUMBERING_TRIDENT
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/slumbering_trident.png"),context) }
+
+        EntityRendererRegistry.register(
             RegisterEntity.STORMSEEKER
         ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/stormseeker.png"),context) }
 
