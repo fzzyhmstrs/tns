@@ -88,6 +88,7 @@ object TnsConfig:
 
     class Materials: ConfigClass(materialsHeader), OldClass<Materials>{
 
+        var slumbering = TnsTridentMaterialsConfig.SLUMBERING
         var stormseeker = TnsTridentMaterialsConfig.STORMSEEKER
         var desecrator = TnsTridentMaterialsConfig.DESECRATOR
         var echo = TnsTridentMaterialsConfig.ECHO
