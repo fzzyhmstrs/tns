@@ -48,10 +48,24 @@ object TnsConfig:
             var powerBaseAdder = ValidatedDouble(1.0,10.0,0.0)
         }
 
-
+        var oceanChestLootTables = ValidatedIdentifierList(
+            listOf(
+                LootTables.SHIPWRECK_SUPPLY_CHEST,
+                LootTables.SHIPWRECK_MAP_CHEST,
+                LootTables.SHIPWRECK_TREASURE_CHEST,
+                LootTables.UNDERWATER_RUIN_SMALL_CHEST,
+                LootTables.UNDERWATER_RUIN_BIG_CHEST,
+                LootTables.RUINED_PORTAL_CHEST,
+                LootTables.BURIED_TREASURE_CHEST,
+                Identifier("mostructures","pirate_ship_cargo_misc")                
+            ),
+            {id -> Identifier.tryParse(id) != null},
+            "Needs to be a valid identifier string"
+        )
 
         var witherUniqueChance = ValidatedFloat(0.01f,1f,0f)
-        var chestUniqueChance = ValidatedFloat(0.00025f,1f,0f)
+        var elderGuardianUniqueChance = ValidatedFloat(0.0025f,1f,0f)
+        var chestUniqueChance = ValidatedFloat(0.0005f,1f,0f)
         var basicHarpoonChance = ValidatedFloat(0.1f,1f,0f)
         var oceanHarpoonChance = ValidatedFloat(0.1f,1f,0f)
         var strongHarpoonChance = ValidatedFloat(0.075f,1f,0f)
