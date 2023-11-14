@@ -21,6 +21,6 @@ class ConfigEquipmentModifier(
     availableForSelection)
 {
     override fun isEnabled(): Boolean{
-        return TnsConfig.modifiers.isModifierEnabled(modifierId).also { println("Modifier: $modifierId is enabled: $it")}
+        return TnsConfig.modifiers.isModifierEnabled(modifierId)
     }
 }
