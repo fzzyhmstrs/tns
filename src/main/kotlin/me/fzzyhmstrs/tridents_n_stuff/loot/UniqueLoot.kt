@@ -16,6 +16,8 @@ import net.minecraft.util.Identifier
 object UniqueLoot: AbstractModLoot() {
     override val targetNameSpace: String = "minecraft"
 
+    //Add icons to archaeology underwater
+
     override fun lootBuilder(id: Identifier, table: LootTable.Builder): Boolean{
         if(id == EntityType.WITHER.lootTableId){
             val poolBuilder = LootPool.builder()
@@ -23,16 +25,29 @@ object UniqueLoot: AbstractModLoot() {
                 .conditionally(RandomChanceLootCondition.builder(TnsConfig.items.witherUniqueChance.get()))
                 .with(TagEntry.expandBuilder(RegisterTag.UNIQUE_TRIDENTS))
             table.pool(poolBuilder)
+            val poolBuilder2 = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0F))
+                .conditionally(RandomChanceLootCondition.builder(TnsConfig.items.witherUniqueChance.get()))
+                .with(TagEntry.expandBuilder(RegisterTag.ICONS))
+            table.pool(poolBuilder2)
             return true
-        } else if ((table as BuilderAccessor).type == LootContextTypes.CHEST) {
+        } else if(TnsConfig.items.oceanBossLootTables.contains(id)){
+            val poolBuilder = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0F))
+                .conditionally(RandomChanceLootCondition.builder(TnsConfig.items.oceanBossUniqueChance.get()))
+                .with(ItemEntry.builder(RegisterItem.SLUMBERING_TRIDENT).weight(20))
+                .with(TagEntry.expandBuilder(RegisterTag.ICONS).weight(1))
+            table.pool(poolBuilder)
+            return true
+        } else if (TnsConfig.items.oceanChestLootTables.contains(id)) {
             val poolBuilder = LootPool.builder()
                 .rolls(ConstantLootNumberProvider.create(1.0F))
                 .conditionally(RandomChanceLootCondition.builder(TnsConfig.items.chestUniqueChance.get()))
-                .with(TagEntry.expandBuilder(RegisterTag.UNIQUE_TRIDENTS))
+                .with(TagEntry.expandBuilder(RegisterTag.ICONS))
+                .with(ItemEntry.builder(RegisterItem.SLUMBERING_TRIDENT).weight(1))
             table.pool(poolBuilder)
             return true
         }
-
         return false
     }
 }
