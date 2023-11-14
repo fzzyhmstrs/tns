@@ -75,7 +75,7 @@ open class SpearEntity : PersistentProjectileEntity {
         val blockPos: BlockPos?
         var livingEntity: Entity? = null
         val entity = entityHitResult.entity
-        var f = this.damage
+        var f = this.damage + 4.0f
         if (entity is LivingEntity) {
             livingEntity = entity
             f += EnchantmentHelper.getAttackDamage(tridentStack, livingEntity.group)
@@ -136,10 +136,6 @@ open class SpearEntity : PersistentProjectileEntity {
         if (pickupType != PickupPermission.ALLOWED) {
             super.age()
         }
-    }
-
-    override fun getDragInWater(): Float {
-        return 0.95f
     }
 
     override fun shouldRender(cameraX: Double, cameraY: Double, cameraZ: Double): Boolean {

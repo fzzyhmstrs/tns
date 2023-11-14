@@ -25,12 +25,12 @@ class SpearEntityModel(private val root: ModelPart) : TridentEntityModel(root) {
             )
             modelPartData2.addChild(
                 "base_right",
-                ModelPartBuilder.create().uv(4, 0).cuboid(0.5f, 4.0f, -0.5f, 2.0f, 1.0f, 1.0f),
+                ModelPartBuilder.create().uv(10, 0).cuboid(0.5f, 4.0f, -0.5f, 2.0f, 1.0f, 1.0f),
                 ModelTransform.NONE
             )
             modelPartData2.addChild(
                 "left_spike",
-                ModelPartBuilder.create().uv(4, 3).cuboid(-1.5f, -1.0f, -0.5f, 1.0f, 3.0f, 1.0f),
+                ModelPartBuilder.create().uv(4, 2).cuboid(-1.5f, -1.0f, -0.5f, 1.0f, 3.0f, 1.0f),
                 ModelTransform.NONE
             )
             modelPartData2.addChild(

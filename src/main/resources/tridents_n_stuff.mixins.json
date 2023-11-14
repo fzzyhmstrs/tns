@@ -3,6 +3,7 @@
   "package": "me.fzzyhmstrs.tridents_n_stuff.mixins",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "BuilderAccessor"
   ],
   "client": [
   ],

@@ -1,22 +1,25 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-	"GIG",
-	"ITI",
-	"GIG"
-  ],
-  "key": {
-	"T": {
-	  "item": "minecraft:trident"
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"GIG",
+		"KTK",
+		"GIG"
+	],
+	"key": {
+		"T": {
+			"item": "minecraft:trident"
+		},
+		"I": {
+			"item": "minecraft:nautilus_shell"
+		},
+		"k": {
+			"item": "minecraft:kelp"
+		},
+		"G": {
+			"item": "minecraft:gold_ingot"
+		}
 	},
-  "I": {
-	  "item": "minecraft:nautilus_shell"
-	},
-	"G": {
-	  "item": "minecraft:gold_ingot"
+	"result": {
+		"item": "tridents_n_stuff:oceanic_trident"
 	}
-  },
-  "result": {
-	"item": "tridents_n_stuff:oceanic_trident"
-  }
 }

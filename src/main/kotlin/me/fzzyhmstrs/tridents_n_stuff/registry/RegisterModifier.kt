@@ -1,6 +1,7 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
 import me.fzzyhmstrs.fzzy_core.modifier_util.AbstractModifier
+import me.fzzyhmstrs.fzzy_core.registry.ModifierRegistry
 import me.fzzyhmstrs.gear_core.modifier_util.EquipmentModifier
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.modifier.ConfigEquipmentModifier
@@ -47,10 +48,6 @@ object RegisterModifier {
         .withCustomFormatting(Formatting.AQUA)
         .also { regMod.add(it) }
 
-    fun registerAll(){
-
-    }
-
     val SANGUINE = buildModifier(TNS.identity("sanguine"), persistent = true, availableForSelection = false)
         .withOnAttack(ModifierFunctions.SANGUINE_ATTACK_FUNCTION)
         .withCustomFormatting(Formatting.RED, Formatting.BOLD)
@@ -70,5 +67,13 @@ object RegisterModifier {
         .withPostHit(ModifierConsumers.STELLAR_HIT_CONSUMER)
         .withCustomFormatting(Formatting.DARK_PURPLE, Formatting.BOLD)
         .also { regMod.add(it) }
+
+    fun registerAll(){
+        for (mod in regMod){
+            ModifierRegistry.register(mod)
+        }
+    }
+
+
 
 }

@@ -2,6 +2,7 @@ package me.fzzyhmstrs.tridents_n_stuff.modifier
 
 import me.fzzyhmstrs.fzzy_core.coding_util.PerLvlI
 import me.fzzyhmstrs.fzzy_core.coding_util.PersistentEffectHelper
+import me.fzzyhmstrs.fzzy_core.nbt_util.Nbt
 import me.fzzyhmstrs.gear_core.modifier_util.EquipmentModifier
 import net.minecraft.entity.AreaEffectCloudEntity
 import net.minecraft.entity.EntityType
@@ -9,12 +10,14 @@ import net.minecraft.entity.LightningEntity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
+import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.particle.ParticleTypes
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.sound.SoundCategory
 import net.minecraft.sound.SoundEvents
+import net.minecraft.util.Hand
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.MathHelper
 import net.minecraft.util.math.Vec3d
@@ -22,29 +25,47 @@ import net.minecraft.world.World
 
 object ModifierConsumers {
 
-    /*val STORM_BLESSED_HIT_CONSUMER: EquipmentModifier.ToolConsumer =
-        EquipmentModifier.ToolConsumer { _: ItemStack, user: LivingEntity, target: LivingEntity? ->
-            if (target == null) return@ToolConsumer
-            val blockPos = target.blockPos
-            if (user.world.isSkyVisible(blockPos)){
-                val lbe = EntityType.LIGHTNING_BOLT.create(user.world) ?: return@ToolConsumer
-                lbe.refreshPositionAfterTeleport(Vec3d.ofBottomCenter(blockPos))
-                lbe.channeler = user as? ServerPlayerEntity
-                user.world.spawnEntity(lbe)
-                user.world.playSound(null,blockPos,SoundEvents.ITEM_TRIDENT_THUNDER,SoundCategory.PLAYERS,2.0f,1.0f)
-            }
-        }*/
-
     val STORM_BLESSED_KILL_CONSUMER: EquipmentModifier.ToolConsumer =
         EquipmentModifier.ToolConsumer { stack: ItemStack, user: LivingEntity, target: LivingEntity? ->
             val nbt = stack.orCreateNbt
             val stormKills = nbt.getInt("storm_kills") + 1
+            if (user is PlayerEntity) {
+                val inventory = user.inventory
+                for (i in 0 until inventory.size()){
+                    val stackTest = inventory.getStack(i)
+                    val nbtTest = stackTest.nbt ?: continue
+                    if (Nbt.getItemStackId(nbtTest) == Nbt.getItemStackId(nbt)){
+                        nbtTest.putInt("storm_kills",stormKills)
+                        break
+                    }
+                }
+            } else {
+                val stackTest = user.getStackInHand(Hand.MAIN_HAND)
+                stackTest.nbt?.putInt("storm_kills",stormKills)
+            }
             nbt.putInt("storm_kills",stormKills)
             if (stormKills > 24) {
                 if (target != null && target.distanceTo(user) > 5f) {
                     val storm = LightningStormPersistentEffect()
                     storm.lightningStorm(user,target)
+                    if (user is PlayerEntity) {
+                        val inventory = user.inventory
+                        for (i in 0 until inventory.size()){
+                            val stackTest = inventory.getStack(i)
+                            val nbtTest = stackTest.nbt ?: continue
+                            if (Nbt.getItemStackId(nbtTest) == Nbt.getItemStackId(nbt)){
+                                nbtTest.putBoolean("crackling", false)
+                                nbtTest.putInt("storm_kills", 0)
+                                break
+                            }
+                        }
+                    } else {
+                        val stackTest = user.getStackInHand(Hand.MAIN_HAND)
+                        stackTest.nbt?.putBoolean("crackling", false)
+                        stackTest.nbt?.putInt("storm_kills", 0)
+                    }
                     nbt.putBoolean("crackling", false)
+                    nbt.putInt("storm_kills", 0)
                 } else {
                     nbt.putBoolean("crackling", true)
                 }
@@ -107,13 +128,9 @@ object ModifierConsumers {
         EquipmentModifier.ToolConsumer { _: ItemStack, user: LivingEntity, target: LivingEntity? ->
             if (target == null) return@ToolConsumer
             target.removeStatusEffect(StatusEffects.STRENGTH)
-            target.addStatusEffect(
-                StatusEffectInstance(StatusEffects.WEAKNESS, 400, 1)
-            )
+            target.addStatusEffect(StatusEffectInstance(StatusEffects.WEAKNESS, 400, 1))
             target.removeStatusEffect(StatusEffects.JUMP_BOOST)
-            target.addStatusEffect(
-                StatusEffectInstance(StatusEffects.JUMP_BOOST, 400, -3)
-            )
+            //target.addStatusEffect(StatusEffectInstance(StatusEffects.JUMP_BOOST, 400, -3))
         }
     val VILE_KILL_CONSUMER: EquipmentModifier.ToolConsumer =
         EquipmentModifier.ToolConsumer { _: ItemStack, user: LivingEntity, target: LivingEntity? ->
@@ -148,7 +165,7 @@ object ModifierConsumers {
             val box = target.boundingBox.expand(2.5)
             val entities = user.world.getOtherEntities(user,box) {e -> e is LivingEntity && e !== target}.mapNotNull { it as? LivingEntity }
             for (entity in entities){
-                entity.takeKnockback(0.8,entity.x - target.x,entity.z - target.z)
+                entity.takeKnockback(0.35,entity.x - target.x,entity.z - target.z)
             }
             if (user.world is ServerWorld){
                 (user.world as ServerWorld).spawnParticles(ParticleTypes.PORTAL,target.x,target.getBodyY(0.5), target.z,100,2.5,2.5,2.5,0.05)

@@ -1,0 +1,62 @@
+package me.fzzyhmstrs.tridents_n_stuff.renderer
+
+import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity
+import me.fzzyhmstrs.tridents_n_stuff.entity.SpearEntity
+import me.fzzyhmstrs.tridents_n_stuff.model.CustomTridentEntityModel
+import me.fzzyhmstrs.tridents_n_stuff.registry.RegisterRenderer
+import net.minecraft.client.render.OverlayTexture
+import net.minecraft.client.render.VertexConsumerProvider
+import net.minecraft.client.render.entity.EntityRenderer
+import net.minecraft.client.render.entity.EntityRendererFactory
+import net.minecraft.client.render.item.ItemRenderer
+import net.minecraft.client.util.math.MatrixStack
+import net.minecraft.util.Identifier
+import net.minecraft.util.math.MathHelper
+import net.minecraft.util.math.RotationAxis
+
+@Suppress("PrivatePropertyName")
+class SpearEntityRenderer<T: SpearEntity>(private val texture: Identifier, context: EntityRendererFactory.Context) : EntityRenderer<T>(context) {
+    var model = CustomTridentEntityModel(context.getPart(RegisterRenderer.SPEAR))
+
+    override fun render(
+        tridentEntity: T,
+        f: Float,
+        g: Float,
+        matrixStack: MatrixStack,
+        vertexConsumerProvider: VertexConsumerProvider,
+        i: Int
+    ) {
+        matrixStack.push()
+        matrixStack.multiply(
+            RotationAxis.POSITIVE_Y.rotationDegrees(
+                MathHelper.lerp(
+                    g,
+                    tridentEntity.prevYaw,
+                    tridentEntity.yaw
+                ) - 90.0f
+            )
+        )
+        matrixStack.multiply(
+            RotationAxis.POSITIVE_Z.rotationDegrees(
+                MathHelper.lerp(
+                    g,
+                    tridentEntity.prevPitch,
+                    tridentEntity.pitch
+                ) + 90.0f
+            )
+        )
+        val vertexConsumer = ItemRenderer.getDirectItemGlintConsumer(
+            vertexConsumerProvider,
+            model.getLayer(getTexture(tridentEntity)),
+            false,
+            tridentEntity.isEnchanted
+        )
+        model.render(matrixStack, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0f, 1.0f, 1.0f, 1.0f)
+        matrixStack.pop()
+        super.render(tridentEntity, f, g, matrixStack, vertexConsumerProvider, i)
+    }
+
+    override fun getTexture(entity: T): Identifier {
+        return texture
+    }
+}

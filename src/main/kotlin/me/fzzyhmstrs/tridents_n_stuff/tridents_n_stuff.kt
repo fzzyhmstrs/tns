@@ -36,18 +36,10 @@ object TNS: ModInitializer {
 }
 
 @Environment(value = EnvType.CLIENT)
-object TNSClient: ClientModInitializer{
+object TNSClient: ClientModInitializer {
 
     override fun onInitializeClient() {
         RegisterRenderer.registerAll()
         RegisterItemModel.registerAll()
     }
-}
-
-object TNSPreLaunch: PreLaunchEntrypoint{
-
-    override fun onPreLaunch() {
-        MixinExtrasBootstrap.init()
-    }
-
 }

@@ -3,6 +3,7 @@ package me.fzzyhmstrs.tridents_n_stuff.modifier
 import me.fzzyhmstrs.gear_core.modifier_util.EquipmentModifier
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import net.minecraft.entity.EntityGroup
+import net.minecraft.entity.EntityType
 import net.minecraft.entity.effect.StatusEffectInstance
 import kotlin.math.max
 
@@ -28,7 +29,7 @@ object ModifierFunctions {
 
     val OCEANIC_ATTACK_FUNCTION: EquipmentModifier.DamageFunction =
         EquipmentModifier.DamageFunction { _, _, attacker, _, amount ->
-            if (attacker?.group == EntityGroup.AQUATIC)
+            if (attacker?.group == EntityGroup.AQUATIC || attacker?.type == EntityType.DROWNED)
                 return@DamageFunction amount * 1.5f
             amount
         }

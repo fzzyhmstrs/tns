@@ -19,19 +19,13 @@
     "main": [
       {
         "adapter": "kotlin",
-        "value": "me.fzzyhmstrs.template_kotlin.TNS"
+        "value": "me.fzzyhmstrs.tridents_n_stuff.TNS"
       }
     ],
     "client": [
       {
         "adapter": "kotlin",
-        "value": "me.fzzyhmstrs.template_kotlin.TNSClient"
-      }
-    ],
-    "preLaunch": [
-      {
-        "adapter": "kotlin",
-        "value": "me.fzzyhmstrs.template_kotlin.TNSPreLaunch"
+        "value": "me.fzzyhmstrs.tridents_n_stuff.TNSClient"
       }
     ]
   },

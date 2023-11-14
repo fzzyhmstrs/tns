@@ -11,6 +11,7 @@ import me.fzzyhmstrs.tridents_n_stuff.model.SpearEntityModel
 import me.fzzyhmstrs.tridents_n_stuff.renderer.CustomFancyTridentEntityRenderer
 import me.fzzyhmstrs.tridents_n_stuff.renderer.CustomTridentEntityRenderer
 import me.fzzyhmstrs.tridents_n_stuff.renderer.HarpoonEntityRenderer
+import me.fzzyhmstrs.tridents_n_stuff.renderer.SpearEntityRenderer
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.minecraft.client.item.ModelPredicateProviderRegistry
@@ -71,6 +72,32 @@ object RegisterRenderer {
         EntityRendererRegistry.register(
             RegisterEntity.FARSHOT_TRIDENT
         ){ context: EntityRendererFactory.Context -> CustomTridentEntityRenderer<FarshotTridentEntity>(TNS.identity("textures/trident/farshot_trident.png"),context) }
+
+        ///////////
+
+        EntityRendererRegistry.register(
+            RegisterEntity.WOODEN_SPEAR
+        ){ context: EntityRendererFactory.Context -> SpearEntityRenderer<SpearEntity>(TNS.identity("textures/spear/wooden_spear.png"),context) }
+
+        EntityRendererRegistry.register(
+            RegisterEntity.STONE_SPEAR
+        ){ context: EntityRendererFactory.Context -> SpearEntityRenderer<SpearEntity>(TNS.identity("textures/spear/stone_spear.png"),context) }
+
+        EntityRendererRegistry.register(
+            RegisterEntity.IRON_SPEAR
+        ){ context: EntityRendererFactory.Context -> SpearEntityRenderer<SpearEntity>(TNS.identity("textures/spear/iron_spear.png"),context) }
+
+        EntityRendererRegistry.register(
+            RegisterEntity.GOLDEN_SPEAR
+        ){ context: EntityRendererFactory.Context -> SpearEntityRenderer<SpearEntity>(TNS.identity("textures/spear/golden_spear.png"),context) }
+
+        EntityRendererRegistry.register(
+            RegisterEntity.DIAMOND_SPEAR
+        ){ context: EntityRendererFactory.Context -> SpearEntityRenderer<SpearEntity>(TNS.identity("textures/spear/diamond_spear.png"),context) }
+
+        EntityRendererRegistry.register(
+            RegisterEntity.NETHERITE_SPEAR
+        ){ context: EntityRendererFactory.Context -> SpearEntityRenderer<SpearEntity>(TNS.identity("textures/spear/netherite_spear.png"),context) }
 
         ///////////
 

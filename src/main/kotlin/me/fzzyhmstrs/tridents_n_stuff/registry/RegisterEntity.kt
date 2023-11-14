@@ -58,7 +58,7 @@ object RegisterEntity {
     val ANCIENT_TRIDENT: EntityType<CustomTridentEntity> = register(
         { entityType: EntityType<CustomTridentEntity>, world: World ->
             CustomTridentEntity(entityType,world)
-        }, "frenzied_trident_entity")
+        }, "ancient_trident_entity")
     val OCEANIC_TRIDENT: EntityType<CustomTridentEntity> = register(
         { entityType: EntityType<CustomTridentEntity>, world: World ->
             CustomTridentEntity(entityType,world)

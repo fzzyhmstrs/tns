@@ -42,12 +42,12 @@ object RegisterItem {
     val DIAMOND_HARPOON = register(HarpoonItem(TnsConfig.items.harpoon.diamondBaseDamage.get(),RegisterEntity.DIAMOND_HARPOON,Item.Settings()),"diamond_harpoon")
 
     //spear stuff
-    val WOODEN_SPEAR = register(SpearItem(ToolMaterials.WOOD, -2, -2.9f, FabricItemSettings(), RegisterEntity.WOODEN_SPEAR), "wooden_spear")
-    val STONE_SPEAR = register(SpearItem(ToolMaterials.STONE, -2, -2.9f, FabricItemSettings(), RegisterEntity.STONE_SPEAR), "stone_spear")
-    val IRON_SPEAR = register(SpearItem(ToolMaterials.IRON, -2, -2.9f, FabricItemSettings(), RegisterEntity.IRON_SPEAR), "iron_spear")
-    val GOLDEN_SPEAR = register(SpearItem(ToolMaterials.GOLD, -2, -2.9f, FabricItemSettings(), RegisterEntity.GOLDEN_SPEAR), "golden_spear")
-    val DIAMOND_SPEAR = register(SpearItem(ToolMaterials.DIAMOND, -2, -2.9f, FabricItemSettings(), RegisterEntity.DIAMOND_SPEAR), "diamond_spear")
-    val NETHERITE_SPEAR = register(SpearItem(ToolMaterials.NETHERITE, -2, -2.9f, FabricItemSettings(), RegisterEntity.NETHERITE_SPEAR), "netherite_spear")
+    val WOODEN_SPEAR = register(SpearItem(ToolMaterials.WOOD, 4, -2.9f, FabricItemSettings(), RegisterEntity.WOODEN_SPEAR), "wooden_spear")
+    val STONE_SPEAR = register(SpearItem(ToolMaterials.STONE, 4, -2.9f, FabricItemSettings(), RegisterEntity.STONE_SPEAR), "stone_spear")
+    val IRON_SPEAR = register(SpearItem(ToolMaterials.IRON, 4, -2.9f, FabricItemSettings(), RegisterEntity.IRON_SPEAR), "iron_spear")
+    val GOLDEN_SPEAR = register(SpearItem(ToolMaterials.GOLD, 4, -2.9f, FabricItemSettings(), RegisterEntity.GOLDEN_SPEAR), "golden_spear")
+    val DIAMOND_SPEAR = register(SpearItem(ToolMaterials.DIAMOND, 4, -2.9f, FabricItemSettings(), RegisterEntity.DIAMOND_SPEAR), "diamond_spear")
+    val NETHERITE_SPEAR = register(SpearItem(ToolMaterials.NETHERITE, 4, -2.9f, FabricItemSettings(), RegisterEntity.NETHERITE_SPEAR), "netherite_spear")
 
     
     val TNS_GROUP: ItemGroup by lazy{

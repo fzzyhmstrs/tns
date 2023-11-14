@@ -30,10 +30,13 @@
 	"item.tridents_n_stuff.sanguine_bond": "Sanguine Bond",
 	"item.tridents_n_stuff.sanguine_bond.flavor": "It's vermilion surface seems eager for blood",
 	"item.tridents_n_stuff.frenzied_trident": "Frenzied Trident",
+	"item.tridents_n_stuff.frenzied_trident.flavor": "Attacks much faster than normal tridents",
 	"item.tridents_n_stuff.ancient_trident": "Ancient Trident",
+	"item.tridents_n_stuff.ancient_trident.flavor": "Deals more base damage",
 	"item.tridents_n_stuff.oceanic_trident": "Oceanic Trident",
 	"item.tridents_n_stuff.holy_trident": "Holy Trident",
 	"item.tridents_n_stuff.farshot_trident": "Farshot Trident",
+	"item.tridents_n_stuff.farshot_trident.flavor": "Affect les by gravity. Travels further and straighter than normal",
 	"item.tridents_n_stuff.harpoon_launcher": "Harpoon Launcher",
 	"item.tridents_n_stuff.bone_harpoon": "Bone Harpoon",
 	"item.tridents_n_stuff.prismarine_harpoon": "Prismarine Harpoon",
@@ -50,8 +53,8 @@
 	"equipment.modifier.tridents_n_stuff:vile": "Vile",
 	"equipment.modifier.tridents_n_stuff:echoing": "Echoing",
 
-	"equipment.modifier.tridents_n_stuff:storm_blessed.desc": "Calls down a lightning bolt on attacking.",
-	"equipment.modifier.tridents_n_stuff:vile.desc": "Weakens struck enemies and withers them.",
+	"equipment.modifier.tridents_n_stuff:storm_blessed.desc": "Kills charge this trident. Once charged, unleashes a lightning storm when it strikes a target at a distance.",
+	"equipment.modifier.tridents_n_stuff:vile.desc": "Weakens struck enemies, spawning a withering cloud on kill.",
 	"equipment.modifier.tridents_n_stuff:echoing.desc": "Deals magic damage to all mobs near the struck target.",
 
 
@@ -64,5 +67,8 @@
 	"equipment.modifier.tridents_n_stuff:sanguine.desc": "Stacks levels of Bleeding. Deals additional damage and heals the weilder based on Bleeding stacks.",
 	"equipment.modifier.tridents_n_stuff:stellar.desc": "Pulls all mobs near the target towards the target. Attacks have a small radius of AOE damage.",
 	"equipment.modifier.tridents_n_stuff:holy.desc": "Deals 50% increased damage to undead.",
-	"equipment.modifier.tridents_n_stuff:oceanic.desc": "Deals 50% increased damage to aquatic mobs."
+	"equipment.modifier.tridents_n_stuff:oceanic.desc": "Deals 50% increased damage to aquatic mobs.",
+
+
+	"itemGroup.tridents_n_stuff.tns_group": "Tridents 'n' Stuff"
 }

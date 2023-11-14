@@ -13,10 +13,13 @@ import net.minecraft.item.ToolMaterial
 import net.minecraft.sound.SoundCategory
 import net.minecraft.sound.SoundEvents
 import net.minecraft.stat.Stats
+import net.minecraft.util.Hand
+import net.minecraft.util.TypedActionResult
 import net.minecraft.util.UseAction
 import net.minecraft.util.math.MathHelper
 import net.minecraft.util.math.Vec3d
 import net.minecraft.world.World
+import java.lang.Exception
 
 open class SpearItem(private val material: ToolMaterial, attackDamage: Int, attackSpeed: Float, settings: Settings, private val entityType: EntityType<SpearEntity>):
     SwordItem(material, attackDamage, attackSpeed, settings) {
@@ -25,13 +28,25 @@ open class SpearItem(private val material: ToolMaterial, attackDamage: Int, atta
         return material.repairIngredient.test(ingredient) || super.canRepair(stack, ingredient)
     }
 
-
     override fun getEnchantability(): Int {
         return material.enchantability
     }
 
     override fun getUseAction(stack: ItemStack): UseAction {
         return UseAction.SPEAR
+    }
+
+    override fun getMaxUseTime(stack: ItemStack): Int {
+        return 72000
+    }
+
+    override fun use(world: World, user: PlayerEntity, hand: Hand): TypedActionResult<ItemStack>? {
+        val itemStack = user.getStackInHand(hand)
+        if (itemStack.damage >= itemStack.maxDamage - 1) {
+            return TypedActionResult.fail(itemStack)
+        }
+        user.setCurrentHand(hand)
+        return TypedActionResult.consume(itemStack)
     }
       
       fun makeSpearEntity(
@@ -41,7 +56,7 @@ open class SpearItem(private val material: ToolMaterial, attackDamage: Int, atta
           stack: ItemStack
     ): SpearEntity {
         return SpearEntity(entityType, world, livingEntity, stack).also { it.setDamage(material) }
-    }    
+    }
 
     override fun onStoppedUsing(stack: ItemStack, world: World, user: LivingEntity, remainingUseTicks: Int) {
         if (user !is PlayerEntity) {
