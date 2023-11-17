@@ -7,11 +7,14 @@ import me.fzzyhmstrs.fzzy_config.config_util.SyncedConfigWithReadMe
 import me.fzzyhmstrs.fzzy_config.interfaces.OldClass
 import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedDouble
 import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedFloat
+import me.fzzyhmstrs.fzzy_config.validated_field.list.ValidatedIdentifierList
 import me.fzzyhmstrs.fzzy_config.validated_field.list.ValidatedStringList
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.material.TnsTridentMaterialsConfig
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener
+import net.minecraft.entity.EntityType
+import net.minecraft.loot.LootTables
 import net.minecraft.resource.ResourceManager
 import net.minecraft.resource.ResourceType
 import net.minecraft.util.Identifier
@@ -50,10 +53,8 @@ object TnsConfig:
 
         var oceanBossLootTables = ValidatedIdentifierList(
             listOf(
-                EntityType.ELDER_GUARDIAN.lootTableId              
-            ),
-            {id -> Identifier.tryParse(id) != null},
-            "Needs to be a valid identifier string"
+                EntityType.ELDER_GUARDIAN.lootTableId
+            ), invalidEntryMessage= "Needs to be a valid identifier string"
         )
 
         var oceanChestLootTables = ValidatedIdentifierList(
@@ -66,9 +67,7 @@ object TnsConfig:
                 LootTables.RUINED_PORTAL_CHEST,
                 LootTables.BURIED_TREASURE_CHEST,
                 Identifier("mostructures","pirate_ship_cargo_misc")                
-            ),
-            {id -> Identifier.tryParse(id) != null},
-            "Needs to be a valid identifier string"
+            ), invalidEntryMessage = "Needs to be a valid identifier string"
         )
 
         var witherUniqueChance = ValidatedFloat(0.01f,1f,0f)

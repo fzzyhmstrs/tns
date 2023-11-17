@@ -3,12 +3,14 @@ package me.fzzyhmstrs.tridents_n_stuff.loot
 import me.fzzyhmstrs.fzzy_core.item_util.AbstractModLoot
 import me.fzzyhmstrs.tridents_n_stuff.config.TnsConfig
 import me.fzzyhmstrs.tridents_n_stuff.mixins.BuilderAccessor
+import me.fzzyhmstrs.tridents_n_stuff.registry.RegisterItem
 import me.fzzyhmstrs.tridents_n_stuff.registry.RegisterTag
 import net.minecraft.entity.EntityType
 import net.minecraft.loot.LootPool
 import net.minecraft.loot.LootTable
 import net.minecraft.loot.condition.RandomChanceLootCondition
 import net.minecraft.loot.context.LootContextTypes
+import net.minecraft.loot.entry.ItemEntry
 import net.minecraft.loot.entry.TagEntry
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider
 import net.minecraft.util.Identifier

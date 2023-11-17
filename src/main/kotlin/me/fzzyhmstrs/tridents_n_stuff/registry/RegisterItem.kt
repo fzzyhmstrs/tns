@@ -1,5 +1,6 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
+import me.fzzyhmstrs.fzzy_core.item_util.CustomFlavorItem
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.config.TnsConfig
 import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity

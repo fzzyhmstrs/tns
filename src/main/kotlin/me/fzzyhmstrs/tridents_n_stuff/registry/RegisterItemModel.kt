@@ -16,7 +16,7 @@ object RegisterItemModel {
             .withHeld(ModelIdentifier(TNS.MOD_ID, "${name}_in_hand","inventory"), true)
         ItemModelRegistry.registerItemModelId(item, modes)
         ItemModelRegistry.registerItemEntityModel(item,
-            BuiltinEntityItemEntityRenderer(item,TNS.identity("textures/entity/trident/${name}.png")),
+            BuiltinEntityItemEntityRenderer(item,TNS.identity("textures/trident/${name}.png")),
             RegisterRenderer.CUSTOM_FANCY_TRIDENT,
             CustomFancyTridentEntityModel::class.java)
     }
@@ -25,7 +25,7 @@ object RegisterItemModel {
             .withHeld(ModelIdentifier(TNS.MOD_ID, "${name}_in_hand","inventory"), true)
         ItemModelRegistry.registerItemModelId(item, modes)
         ItemModelRegistry.registerItemEntityModel(item,
-            BuiltinEntityItemEntityRenderer(item,TNS.identity("textures/entity/trident/${name}.png")),
+            BuiltinEntityItemEntityRenderer(item,TNS.identity("textures/trident/${name}.png")),
             RegisterRenderer.CUSTOM_TRIDENT,
             CustomTridentEntityModel::class.java)
     }
@@ -35,7 +35,7 @@ object RegisterItemModel {
             .withHeld(ModelIdentifier(TNS.MOD_ID, "${name}_in_hand","inventory"), true)
         ItemModelRegistry.registerItemModelId(item, modes)
         ItemModelRegistry.registerItemEntityModel(item,
-            BuiltinEntityItemEntityRenderer(item,TNS.identity("textures/entity/spear/${name}.png")),
+            BuiltinEntityItemEntityRenderer(item,TNS.identity("textures/spear/${name}.png")),
             RegisterRenderer.SPEAR,
             SpearEntityModel::class.java)
     }

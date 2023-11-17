@@ -40,7 +40,7 @@ class SpearEntityModel(private val root: ModelPart) : TridentEntityModel(root) {
             )
             modelPartData2.addChild(
                 "right_spike",
-                ModelPartBuilder.create().uv(4, 3).mirrored().cuboid(0.5f, -1.0f, -0.5f, 1.0f, 3.0f, 1.0f),
+                ModelPartBuilder.create().uv(4, 2).mirrored().cuboid(0.5f, -1.0f, -0.5f, 1.0f, 3.0f, 1.0f),
                 ModelTransform.NONE
             )
             return TexturedModelData.of(modelData, 32, 32)
