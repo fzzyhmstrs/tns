@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "base": {
+    "item": "tridents_n_stuff:slumbering_trident"
+  },
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "result": {
+    "item": "tridents_n_stuff:sanguine_bond"
+  },
+  "template": {
+    "item": "tridents_n_stuff:icon_of_blood"
+  }
+}
