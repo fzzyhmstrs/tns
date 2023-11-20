@@ -41,11 +41,11 @@ object RegisterRenderer {
 
         EntityRendererRegistry.register(
             RegisterEntity.THE_DESECRATOR
-        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/desecrator.png"),context) }
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/the_desecrator.png"),context) }
 
         EntityRendererRegistry.register(
             RegisterEntity.ECHO_OF_THE_DEEP
-        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/echo.png"),context) }
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/echo_of_the_deep.png"),context) }
 
         EntityRendererRegistry.register(
             RegisterEntity.STELLARIS
@@ -53,7 +53,7 @@ object RegisterRenderer {
 
         EntityRendererRegistry.register(
             RegisterEntity.SANGUINE_BOND
-        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/sanguine.png"),context) }
+        ){ context: EntityRendererFactory.Context -> CustomFancyTridentEntityRenderer<CustomTridentEntity>(TNS.identity("textures/trident/sanguine_bond.png"),context) }
 
         //////////
 

@@ -71,7 +71,7 @@ object TnsConfig:
         )
 
         var witherUniqueChance = ValidatedFloat(0.01f,1f,0f)
-        var oceanBossUniqueChance = ValidatedFloat(0.0025f,1f,0f)
+        var oceanBossUniqueChance = ValidatedFloat(0.005f,1f,0f)
         var chestUniqueChance = ValidatedFloat(0.0005f,1f,0f)
         var basicHarpoonChance = ValidatedFloat(0.1f,1f,0f)
         var oceanHarpoonChance = ValidatedFloat(0.1f,1f,0f)

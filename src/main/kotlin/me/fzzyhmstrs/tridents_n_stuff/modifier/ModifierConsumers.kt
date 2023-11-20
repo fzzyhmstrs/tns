@@ -4,10 +4,8 @@ import me.fzzyhmstrs.fzzy_core.coding_util.PerLvlI
 import me.fzzyhmstrs.fzzy_core.coding_util.PersistentEffectHelper
 import me.fzzyhmstrs.fzzy_core.nbt_util.Nbt
 import me.fzzyhmstrs.gear_core.modifier_util.EquipmentModifier
-import net.minecraft.entity.AreaEffectCloudEntity
-import net.minecraft.entity.EntityType
-import net.minecraft.entity.LightningEntity
-import net.minecraft.entity.LivingEntity
+import net.minecraft.entity.*
+import net.minecraft.entity.attribute.EntityAttributes
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.entity.player.PlayerEntity
@@ -22,6 +20,7 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.math.MathHelper
 import net.minecraft.util.math.Vec3d
 import net.minecraft.world.World
+import kotlin.math.max
 
 object ModifierConsumers {
 
@@ -147,12 +146,13 @@ object ModifierConsumers {
         }
 
     val ECHO_HIT_CONSUMER: EquipmentModifier.ToolConsumer =
-        EquipmentModifier.ToolConsumer { _: ItemStack, user: LivingEntity, target: LivingEntity? ->
+        EquipmentModifier.ToolConsumer { stack: ItemStack, user: LivingEntity, target: LivingEntity? ->
             if (target == null) return@ToolConsumer
             val box = target.boundingBox.expand(2.5)
             val entities = user.world.getOtherEntities(user,box) {e -> e is LivingEntity && e !== target}
+            val dmg = max(3.0f,user.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE).toFloat()/3.0f)
             for (entity in entities){
-                entity.damage(user.damageSources.indirectMagic(user,user),3.0f)
+                entity.damage(user.damageSources.indirectMagic(user,user),dmg)
             }
             if (user.world is ServerWorld){
                 (user.world as ServerWorld).spawnParticles(ParticleTypes.CRIT,target.x,target.getBodyY(0.5), target.z,100,2.5,2.5,2.5,0.05)

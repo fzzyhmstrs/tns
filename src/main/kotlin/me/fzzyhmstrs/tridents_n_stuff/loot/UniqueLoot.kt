@@ -25,7 +25,7 @@ object UniqueLoot: AbstractModLoot() {
             val poolBuilder = LootPool.builder()
                 .rolls(ConstantLootNumberProvider.create(1.0F))
                 .conditionally(RandomChanceLootCondition.builder(TnsConfig.items.witherUniqueChance.get()))
-                .with(TagEntry.expandBuilder(RegisterTag.UNIQUE_TRIDENTS))
+                .with(ItemEntry.builder(RegisterItem.SLUMBERING_TRIDENT))
             table.pool(poolBuilder)
             val poolBuilder2 = LootPool.builder()
                 .rolls(ConstantLootNumberProvider.create(1.0F))
