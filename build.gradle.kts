@@ -102,6 +102,7 @@ dependencies {
     modImplementation(":fzzy_config-$fzzyConfigVersion"){
         exclude("net.fabricmc.fabric-api")
     }
+    include(":fzzy_config-$fzzyConfigVersion")
 
     val meVersion: String by project
     implementation("com.github.LlamaLad7.mixinextras:mixinextras-fabric:$meVersion")
