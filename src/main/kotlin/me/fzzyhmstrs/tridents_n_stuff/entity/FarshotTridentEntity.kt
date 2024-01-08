@@ -8,8 +8,8 @@ import net.minecraft.world.World
 
 class FarshotTridentEntity: CustomTridentEntity {
 
-    constructor(entityType: EntityType<out CustomTridentEntity?>?, world: World?) : super(entityType, world)
-    constructor(world: World?, owner: LivingEntity?, stack: ItemStack) : super(
+    constructor(entityType: EntityType<out CustomTridentEntity>, world: World) : super(entityType, world)
+    constructor(world: World, owner: LivingEntity, stack: ItemStack) : super(
         RegisterEntity.FARSHOT_TRIDENT,
         world,
         owner,

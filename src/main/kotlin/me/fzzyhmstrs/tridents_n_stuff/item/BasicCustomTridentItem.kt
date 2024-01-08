@@ -1,5 +1,6 @@
 package me.fzzyhmstrs.tridents_n_stuff.item
 
+import me.fzzyhmstrs.fzzy_core.item_util.BasicCustomTridentItem
 import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity
 import net.minecraft.entity.LivingEntity
 import net.minecraft.item.ItemStack
@@ -7,7 +8,7 @@ import net.minecraft.item.ToolMaterial
 import net.minecraft.world.World
 
 open class BasicCustomTridentItem(material: ToolMaterial, attackSpeed: Double = -2.9, settings: Settings, private val entityBuilder: EntityBuilder<CustomTridentEntity>) :
-    CustomTridentItem<CustomTridentEntity>(material, attackSpeed, settings) {
+    BasicCustomTridentItem<CustomTridentEntity>(material, attackSpeed, settings) {
     override fun makeTridentEntity(
         material: ToolMaterial,
         world: World,

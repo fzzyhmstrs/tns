@@ -1,8 +1,8 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
+import me.fzzyhmstrs.fzzy_core.item_util.BasicCustomTridentItem
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.entity.*
-import me.fzzyhmstrs.tridents_n_stuff.item.CustomTridentItem
 import me.fzzyhmstrs.tridents_n_stuff.item.HarpoonLauncherItem
 import me.fzzyhmstrs.tridents_n_stuff.item.SpearItem
 import me.fzzyhmstrs.tridents_n_stuff.model.CustomFancyTridentEntityModel
@@ -126,7 +126,7 @@ object RegisterRenderer {
         /////////////
 
         for (item in RegisterItem.getItems()){
-            if (!(item is CustomTridentItem<*> || item is HarpoonLauncherItem || item is SpearItem)) continue
+            if (!(item is BasicCustomTridentItem<*> || item is HarpoonLauncherItem || item is SpearItem)) continue
             ModelPredicateProviderRegistry.register(
                 item, Identifier("throwing")
             ) { stack: ItemStack, _: ClientWorld?, entity: LivingEntity?, _: Int -> if (entity != null && entity.isUsingItem && entity.activeItem == stack) 1.0f else 0.0f }

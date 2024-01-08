@@ -82,6 +82,7 @@
 	"equipment.modifier.tridents_n_stuff:holy.desc": "Deals 50% increased damage to undead.",
 	"equipment.modifier.tridents_n_stuff:oceanic.desc": "Deals 50% increased damage to aquatic mobs.",
 
+	"effect.tridents_n_stuff.bleeding": "Bleeding",
 
 	"itemGroup.tridents_n_stuff.tns_group": "Tridents 'n' Stuff"
 }
