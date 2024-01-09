@@ -67,7 +67,7 @@
 	"equipment.modifier.tridents_n_stuff:echoing": "Резонанс",
 
 	"equipment.modifier.tridents_n_stuff:storm_blessed.desc": "Убийства заряжают трезубец. В заряженном состоянии выпускает стрелы молний при поражении цели с расстояния.",
-	"equipment.modifier.tridents_n_stuff:vile.desc": "Ослабляет врагов, оставляя при убийстве иссущающую дымку.",
+	"equipment.modifier.tridents_n_stuff:vile.desc": "Ослабляет врагов, оставляя при убийстве иссушающую дымку.",
 	"equipment.modifier.tridents_n_stuff:echoing.desc": "Наносит магический урон всем существам возле цели.",
 
 
@@ -82,6 +82,7 @@
 	"equipment.modifier.tridents_n_stuff:holy.desc": "Наносит на 50% больше урона нежити.",
 	"equipment.modifier.tridents_n_stuff:oceanic.desc": "Наносит на 50% больше урона водным созданиям.",
 
+	"effect.tridents_n_stuff.bleeding": "Кровотечение",
 
 	"itemGroup.tridents_n_stuff.tns_group": "Tridents 'n' Stuff"
 }
