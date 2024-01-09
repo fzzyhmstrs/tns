@@ -1,5 +1,6 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
+import me.fzzyhmstrs.fzzy_core.coding_util.FzzyPort
 import me.fzzyhmstrs.fzzy_core.item_util.CustomFlavorItem
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.config.TnsConfig
@@ -20,7 +21,7 @@ object RegisterItem {
 
     private fun <T: Item> register(item: T, name: String): T{
         regItem.add(item)
-        return Registry.register(Registries.ITEM, TNS.identity(name), item)
+        return FzzyPort.ITEM.register(TNS.identity(name), item)
     }
     // unique tridents
     val SLUMBERING_TRIDENT = register(BasicCustomTridentItem(TnsConfig.materials.slumbering,-2.9,FabricItemSettings().rarity(Rarity.UNCOMMON)) {w,e,s -> CustomTridentEntity(RegisterEntity.SLUMBERING_TRIDENT, w,e,s) }, "slumbering_trident")
