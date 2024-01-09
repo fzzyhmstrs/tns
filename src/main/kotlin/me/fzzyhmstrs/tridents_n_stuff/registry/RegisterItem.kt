@@ -61,25 +61,11 @@ object RegisterItem {
 
     
     val TNS_GROUP: ItemGroup by lazy{
-        registerItemGroup()
+        RegisterItemGroup.registerItemGroup()
     }
 
     fun getItems(): List<Item>{
         return regItem
-    }
-
-    fun registerItemGroup(): ItemGroup{
-        return Registry.register(Registries.ITEM_GROUP, TNS.identity("tns_group"), FabricItemGroup.builder()
-            .displayName(Text.translatable("itemGroup.tridents_n_stuff.tns_group"))
-            .icon { ItemStack(Items.TRIDENT) }
-            .entries { _, entries ->
-                entries.addAll(regItem.stream().map { item -> ItemStack(item) }.toList())
-                /*entries.addAll(RegisterArmor.regArmor.stream().map { item -> ItemStack(item) }.toList())
-                entries.addAll(RegisterTool.regTool.stream().map { item -> ItemStack(item) }.toList())*/
-                /*entries.addAll(RegisterBlock.regBlock.values.stream()
-                    .map { block -> ItemStack(block.asItem()) }
-                    .toList())*/
-            }.build())
     }
 
     fun registerAll(){
