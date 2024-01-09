@@ -1,5 +1,6 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
+import me.fzzyhmstrs.fzzy_core.coding_util.FzzyPort
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity
 import me.fzzyhmstrs.tridents_n_stuff.entity.FarshotTridentEntity
@@ -17,7 +18,7 @@ import net.minecraft.world.World
 object RegisterEntity {
 
     fun <T: Entity> register(factory: EntityType.EntityFactory<T>, name: String): EntityType<T>{
-        return Registry.register(Registries.ENTITY_TYPE, TNS.identity(name),
+        return FzzyPort.ENTITY_TYPE.register(TNS.identity(name),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC,factory)
                 .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).trackRangeChunks(4).trackedUpdateRate(20).build()
         )
