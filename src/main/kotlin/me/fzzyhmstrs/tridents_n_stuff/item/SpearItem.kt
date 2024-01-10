@@ -19,7 +19,6 @@ import net.minecraft.util.UseAction
 import net.minecraft.util.math.MathHelper
 import net.minecraft.util.math.Vec3d
 import net.minecraft.world.World
-import java.lang.Exception
 
 open class SpearItem(private val material: ToolMaterial, attackDamage: Int, attackSpeed: Float, settings: Settings, private val entityType: EntityType<SpearEntity>):
     SwordItem(material, attackDamage, attackSpeed, settings) {

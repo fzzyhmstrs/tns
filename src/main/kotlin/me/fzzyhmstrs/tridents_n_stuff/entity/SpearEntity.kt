@@ -1,5 +1,6 @@
 package me.fzzyhmstrs.tridents_n_stuff.entity
 
+import me.fzzyhmstrs.fzzy_core.coding_util.compat.FzzyDamage
 import net.minecraft.enchantment.EnchantmentHelper
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
@@ -72,7 +73,6 @@ open class SpearEntity : PersistentProjectileEntity {
     }
 
     override fun onEntityHit(entityHitResult: EntityHitResult) {
-        val blockPos: BlockPos?
         var livingEntity: Entity? = null
         val entity = entityHitResult.entity
         var f = this.damage + 4.0f
@@ -83,10 +83,8 @@ open class SpearEntity : PersistentProjectileEntity {
         if (owner != null){
             livingEntity = owner as Entity
         }
-        val damageSource = this.damageSources.trident(this, if (owner == null) this else livingEntity)
         dealtDamage = true
-        var soundEvent = SoundEvents.ITEM_TRIDENT_HIT
-        if (entity.damage(damageSource, f)) {
+        if (entity.damage(FzzyDamage.trident(this,this,if (owner == null) this else livingEntity), f)) {
             if (entity.type === EntityType.ENDERMAN) {
                 return
             }
@@ -99,7 +97,7 @@ open class SpearEntity : PersistentProjectileEntity {
             }
         }
         velocity = velocity.multiply(-0.01, -0.1, -0.01)
-        playSound(soundEvent, 1.0f, 1.0f)
+        playSound(SoundEvents.ITEM_TRIDENT_HIT, 1.0f, 1.0f)
     }
 
     override fun tryPickup(player: PlayerEntity): Boolean {

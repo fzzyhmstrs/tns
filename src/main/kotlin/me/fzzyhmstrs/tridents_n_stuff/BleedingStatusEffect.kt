@@ -1,5 +1,6 @@
 package me.fzzyhmstrs.tridents_n_stuff
 
+import me.fzzyhmstrs.fzzy_core.coding_util.compat.FzzyDamage
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.effect.StatusEffect
 import net.minecraft.entity.effect.StatusEffectCategory
@@ -13,6 +14,6 @@ class BleedingStatusEffect(statusEffectCategory: StatusEffectCategory, i: Int): 
     }
 
     override fun applyUpdateEffect(entity: LivingEntity, amplifier: Int) {
-        entity.damage(entity.damageSources.dryOut(), 1.5f)
+        entity.damage(FzzyDamage.dryOut(entity), 1.5f)
     }
 }

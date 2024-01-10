@@ -1,6 +1,6 @@
 package me.fzzyhmstrs.tridents_n_stuff.renderer
 
-import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity
+import me.fzzyhmstrs.fzzy_core.coding_util.compat.FzzyRotation
 import me.fzzyhmstrs.tridents_n_stuff.entity.SpearEntity
 import me.fzzyhmstrs.tridents_n_stuff.model.CustomTridentEntityModel
 import me.fzzyhmstrs.tridents_n_stuff.registry.RegisterRenderer
@@ -12,7 +12,6 @@ import net.minecraft.client.render.item.ItemRenderer
 import net.minecraft.client.util.math.MatrixStack
 import net.minecraft.util.Identifier
 import net.minecraft.util.math.MathHelper
-import net.minecraft.util.math.RotationAxis
 
 @Suppress("PrivatePropertyName")
 class SpearEntityRenderer<T: SpearEntity>(private val texture: Identifier, context: EntityRendererFactory.Context) : EntityRenderer<T>(context) {
@@ -28,7 +27,7 @@ class SpearEntityRenderer<T: SpearEntity>(private val texture: Identifier, conte
     ) {
         matrixStack.push()
         matrixStack.multiply(
-            RotationAxis.POSITIVE_Y.rotationDegrees(
+            FzzyRotation.POSITIVE_Y.degrees(
                 MathHelper.lerp(
                     g,
                     tridentEntity.prevYaw,
@@ -37,7 +36,7 @@ class SpearEntityRenderer<T: SpearEntity>(private val texture: Identifier, conte
             )
         )
         matrixStack.multiply(
-            RotationAxis.POSITIVE_Z.rotationDegrees(
+            FzzyRotation.POSITIVE_Z.degrees(
                 MathHelper.lerp(
                     g,
                     tridentEntity.prevPitch,

@@ -2,13 +2,11 @@
 
 package me.fzzyhmstrs.tridents_n_stuff
 
-import com.llamalad7.mixinextras.MixinExtrasBootstrap
 import me.fzzyhmstrs.tridents_n_stuff.registry.*
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
 import net.fabricmc.api.ModInitializer
-import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint
 import net.minecraft.entity.effect.StatusEffectCategory
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry

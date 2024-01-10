@@ -1,5 +1,6 @@
 package me.fzzyhmstrs.tridents_n_stuff.entity
 
+import me.fzzyhmstrs.fzzy_core.coding_util.compat.FzzyDamage
 import me.fzzyhmstrs.tridents_n_stuff.registry.RegisterEntity
 import me.fzzyhmstrs.tridents_n_stuff.registry.RegisterItem
 import net.minecraft.enchantment.EnchantmentHelper
@@ -67,9 +68,9 @@ class HarpoonEntity: PersistentProjectileEntity {
         var entity2: Entity?
         val entity = entityHitResult.entity
         if (owner.also { entity2 = it } == null) {
-            damageSource = this.damageSources.trident(this, this)
+            damageSource = FzzyDamage.trident(this)
         } else {
-            damageSource = this.damageSources.trident(this, entity2)
+            damageSource = FzzyDamage.trident(this,this,entity2)
             if (entity2 is LivingEntity) {
                 (entity2 as LivingEntity).onAttacking(entity)
             }

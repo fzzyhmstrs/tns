@@ -1,13 +1,12 @@
 package me.fzzyhmstrs.tridents_n_stuff.registry
 
+import me.fzzyhmstrs.fzzy_core.coding_util.FzzyPort
 import me.fzzyhmstrs.tridents_n_stuff.TNS
-import net.minecraft.registry.RegistryKeys
-import net.minecraft.registry.tag.TagKey
 
 object RegisterTag {
 
-    val UNIQUE_TRIDENTS = TagKey.of(RegistryKeys.ITEM, TNS.identity("unique_tridents"))
-    val ICONS = TagKey.of(RegistryKeys.ITEM, TNS.identity("icons"))
+    val UNIQUE_TRIDENTS = FzzyPort.ITEM.tagOf(TNS.identity("unique_tridents"))
+    val ICONS = FzzyPort.ITEM.tagOf(TNS.identity("icons"))
 
     fun registerAll(){}
 

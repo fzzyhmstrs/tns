@@ -8,11 +8,9 @@ import me.fzzyhmstrs.tridents_n_stuff.entity.CustomTridentEntity
 import me.fzzyhmstrs.tridents_n_stuff.entity.FarshotTridentEntity
 import me.fzzyhmstrs.tridents_n_stuff.item.*
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
-import net.minecraft.item.*
-import net.minecraft.registry.Registries
-import net.minecraft.registry.Registry
-import net.minecraft.text.Text
+import net.minecraft.item.Item
+import net.minecraft.item.ItemGroup
+import net.minecraft.item.ToolMaterials
 import net.minecraft.util.Rarity
 
 object RegisterItem {

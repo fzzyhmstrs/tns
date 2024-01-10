@@ -2,9 +2,13 @@ package me.fzzyhmstrs.tridents_n_stuff.modifier
 
 import me.fzzyhmstrs.fzzy_core.coding_util.PerLvlI
 import me.fzzyhmstrs.fzzy_core.coding_util.PersistentEffectHelper
+import me.fzzyhmstrs.fzzy_core.coding_util.compat.FzzyDamage
 import me.fzzyhmstrs.fzzy_core.nbt_util.Nbt
 import me.fzzyhmstrs.gear_core.modifier_util.EquipmentModifier
-import net.minecraft.entity.*
+import net.minecraft.entity.AreaEffectCloudEntity
+import net.minecraft.entity.EntityType
+import net.minecraft.entity.LightningEntity
+import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.attribute.EntityAttributes
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
@@ -152,7 +156,7 @@ object ModifierConsumers {
             val entities = user.world.getOtherEntities(user,box) {e -> e is LivingEntity && e !== target}
             val dmg = max(3.0f,user.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE).toFloat()/3.0f)
             for (entity in entities){
-                entity.damage(user.damageSources.indirectMagic(user,user),dmg)
+                entity.damage(FzzyDamage.indirectMagic(user),dmg)
             }
             if (user.world is ServerWorld){
                 (user.world as ServerWorld).spawnParticles(ParticleTypes.CRIT,target.x,target.getBodyY(0.5), target.z,100,2.5,2.5,2.5,0.05)
