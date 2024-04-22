@@ -1,6 +1,7 @@
 package me.fzzyhmstrs.tridents_n_stuff.config
 
 import me.fzzyhmstrs.fzzy_config.annotations.ConvertFrom
+import me.fzzyhmstrs.fzzy_config.annotations.RequiresRestart
 import me.fzzyhmstrs.fzzy_config.api.ConfigApi
 import me.fzzyhmstrs.fzzy_config.config.Config
 import me.fzzyhmstrs.fzzy_config.config.ConfigSection
@@ -9,6 +10,7 @@ import me.fzzyhmstrs.fzzy_config.validation.collection.ValidatedList
 import me.fzzyhmstrs.fzzy_config.validation.minecraft.ValidatedIdentifier
 import me.fzzyhmstrs.fzzy_config.validation.number.ValidatedDouble
 import me.fzzyhmstrs.fzzy_config.validation.number.ValidatedFloat
+import me.fzzyhmstrs.fzzy_config.validation.number.ValidatedNumber
 import me.fzzyhmstrs.tridents_n_stuff.TNS
 import me.fzzyhmstrs.tridents_n_stuff.material.TnsTridentMaterialsConfig
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper
@@ -48,14 +50,15 @@ object TnsConfig {
                 Identifier("mostructures","pirate_ship_cargo_misc")
             ), ValidatedIdentifier())
 
-        var witherUniqueChance = ValidatedFloat(0.01f,1f,0f)
-        var oceanBossUniqueChance = ValidatedFloat(0.005f,1f,0f)
-        var chestUniqueChance = ValidatedFloat(0.0005f,1f,0f)
-        var basicHarpoonChance = ValidatedFloat(0.1f,1f,0f)
-        var oceanHarpoonChance = ValidatedFloat(0.1f,1f,0f)
-        var strongHarpoonChance = ValidatedFloat(0.075f,1f,0f)
+        var witherUniqueChance = ValidatedFloat(0.01f,1f,0f,ValidatedNumber.WidgetType.TEXTBOX)
+        var oceanBossUniqueChance = ValidatedFloat(0.005f,1f,0f,ValidatedNumber.WidgetType.TEXTBOX)
+        var chestUniqueChance = ValidatedFloat(0.0005f,1f,0f,ValidatedNumber.WidgetType.TEXTBOX)
+        var basicHarpoonChance = ValidatedFloat(0.1f,1f,0f,ValidatedNumber.WidgetType.TEXTBOX)
+        var oceanHarpoonChance = ValidatedFloat(0.1f,1f,0f,ValidatedNumber.WidgetType.TEXTBOX)
+        var strongHarpoonChance = ValidatedFloat(0.075f,1f,0f,ValidatedNumber.WidgetType.TEXTBOX)
     }
 
+    @RequiresRestart
     @ConvertFrom("materials_v0.json",TNS.MOD_ID)
     class Materials: Config(TNS.identity("materials_config")){
 
