@@ -41,7 +41,7 @@
     "java": ">=17",
 	"fzzy_core": ">=0.4.0+1.20.1",
     "gear_core": ">=0.3.6+1.20.1",
-    "fzzy_config": ">=0.2.2+1.20.1"
+    "fzzy_config": ">=0.2.4+1.20.1"
   },
   "custom": {
     "fzzy_config": [
