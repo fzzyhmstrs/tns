@@ -80,7 +80,7 @@ object TnsConfig {
             return !disabledModifiers.contains(id.toString())
         }
 
-        var disabledModifiers = ValidatedList.toString()
+        var disabledModifiers = ValidatedList.ofString()
     }
 
     var items: Items = ConfigApi.registerAndLoadConfig({ Items() })
