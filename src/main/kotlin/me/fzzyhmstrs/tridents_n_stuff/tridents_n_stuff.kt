@@ -2,6 +2,7 @@
 
 package me.fzzyhmstrs.tridents_n_stuff
 
+import me.fzzyhmstrs.tridents_n_stuff.config.TnsConfig
 import me.fzzyhmstrs.tridents_n_stuff.registry.*
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType
@@ -26,6 +27,7 @@ object TNS: ModInitializer {
         RegisterEntity.registerAll()
         RegisterTag.registerAll()
         RegisterLoot.registerAll()
+        TnsConfig.initConfig()
     }
 
     fun identity(path: String): Identifier{

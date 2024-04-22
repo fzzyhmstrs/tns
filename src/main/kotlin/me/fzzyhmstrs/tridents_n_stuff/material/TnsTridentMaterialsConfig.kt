@@ -1,9 +1,9 @@
 package me.fzzyhmstrs.tridents_n_stuff.material
 
-import me.fzzyhmstrs.fzzy_config.validated_field.ValidatedToolMaterial
 import net.fabricmc.yarn.constants.MiningLevels
 import net.minecraft.item.Items
 import net.minecraft.recipe.Ingredient
+import net.minecraft.util.Identifier
 
 object TnsTridentMaterialsConfig {
 
@@ -13,7 +13,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(9f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(15)
-        .repairIngredient(Ingredient.ofItems(Items.NAUTILUS_SHELL))
+        .repairIngredient(Identifier("nautilus_shell"))
         .build()
     val STORMSEEKER = ValidatedToolMaterial.Builder()
         .durability(2250)
@@ -21,7 +21,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(11f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(15)
-        .repairIngredient(Ingredient.ofItems(Items.CONDUIT))
+        .repairIngredient(Identifier("conduit"))
         .build()
     val DESECRATOR = ValidatedToolMaterial.Builder()
         .durability(2250)
@@ -29,7 +29,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(13f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(25)
-        .repairIngredient(Ingredient.ofItems(Items.WITHER_SKELETON_SKULL))
+        .repairIngredient(Identifier("wither_skeleton_skull"))
         .build()
     val ECHO = ValidatedToolMaterial.Builder()
         .durability(2250)
@@ -37,7 +37,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(9f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(19)
-        .repairIngredient(Ingredient.ofItems(Items.ECHO_SHARD))
+        .repairIngredient(Identifier("echo_shard"))
         .build()
     val STELLARIS = ValidatedToolMaterial.Builder()
         .durability(2250)
@@ -45,7 +45,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(11f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(25)
-        .repairIngredient(Ingredient.ofItems(Items.CRYING_OBSIDIAN))
+        .repairIngredient(Identifier("crying_obsidian"))
         .build()
     val SANGUINE = ValidatedToolMaterial.Builder()
         .durability(2250)
@@ -53,7 +53,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(13f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(10)
-        .repairIngredient(Ingredient.ofItems(Items.TOTEM_OF_UNDYING))
+        .repairIngredient(Identifier("totem_of_undying"))
         .build()
 
     val FRENZIED = ValidatedToolMaterial.Builder()
@@ -62,7 +62,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(6f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(20)
-        .repairIngredient(Ingredient.ofItems(Items.REDSTONE_BLOCK))
+        .repairIngredient(Identifier("redstone_block"))
         .build()
     val ANCIENT = ValidatedToolMaterial.Builder()
         .durability(2031)
@@ -70,7 +70,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(11f)
         .miningLevel(MiningLevels.NETHERITE)
         .enchantability(22)
-        .repairIngredient(Ingredient.ofItems(Items.NETHERITE_SCRAP))
+        .repairIngredient(Identifier("netherite_scrap"))
         .build()
     val OCEANIC = ValidatedToolMaterial.Builder()
         .durability(350)
@@ -78,7 +78,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(9f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(20)
-        .repairIngredient(Ingredient.ofItems(Items.NAUTILUS_SHELL))
+        .repairIngredient(Identifier("nautilus_shell"))
         .build()
     val HOLY = ValidatedToolMaterial.Builder()
         .durability(350)
@@ -86,7 +86,7 @@ object TnsTridentMaterialsConfig {
         .attackDamage(9f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(15)
-        .repairIngredient(Ingredient.ofItems(Items.GOLDEN_APPLE))
+        .repairIngredient(Identifier("golden_apple"))
         .build()
     val FARSHOT = ValidatedToolMaterial.Builder()
         .durability(350)
@@ -94,6 +94,6 @@ object TnsTridentMaterialsConfig {
         .attackDamage(9f)
         .miningLevel(MiningLevels.DIAMOND)
         .enchantability(25)
-        .repairIngredient(Ingredient.ofItems(Items.PHANTOM_MEMBRANE))
+        .repairIngredient(Identifier("phantom_membrane"))
         .build()
 }
