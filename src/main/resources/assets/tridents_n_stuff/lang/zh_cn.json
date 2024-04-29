@@ -67,7 +67,7 @@
 	"equipment.modifier.tridents_n_stuff:echoing": "回响",
 
 	"equipment.modifier.tridents_n_stuff:storm_blessed.desc": "击杀一定的生物后并充能此三叉戟，充能之后，当它击中目标后就会引来雷暴。",
-	"equipment.modifier.tridents_n_stuff:vile.desc": "凋零被击中的生物，并在击杀生物后产生凋零药水云。",
+	"equipment.modifier.tridents_n_stuff:vile.desc": "凋零被击中的目标，并在击杀目标后产生凋零药水云。",
 	"equipment.modifier.tridents_n_stuff:echoing.desc": "对被击中的目标附近的所有生物造成魔法伤害。",
 
 
@@ -77,7 +77,7 @@
 	"equipment.modifier.tridents_n_stuff:oceanic": "远洋",
 
 
-	"equipment.modifier.tridents_n_stuff:sanguine.desc": "叠加流血等级。根据“流血”等级对生物造成额外伤害并对玩家治疗。",
+	"equipment.modifier.tridents_n_stuff:sanguine.desc": "叠加流血等级。根据“流血”等级对目标造成额外伤害并给予玩家治疗。",
 	"equipment.modifier.tridents_n_stuff:stellar.desc": "将目标附近的所有生物拉向目标所在。击中目标后会造成小范围的AOE伤害。",
 	"equipment.modifier.tridents_n_stuff:holy.desc": "对亡灵生物的伤害增加50%",
 	"equipment.modifier.tridents_n_stuff:oceanic.desc": "对水生生物的伤害增加50%",
