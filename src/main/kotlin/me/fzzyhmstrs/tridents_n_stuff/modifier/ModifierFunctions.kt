@@ -5,7 +5,7 @@ import me.fzzyhmstrs.tridents_n_stuff.TNS
 import net.minecraft.entity.EntityGroup
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.effect.StatusEffectInstance
-import kotlin.math.max
+import kotlin.math.min
 
 object ModifierFunctions {
 
@@ -15,7 +15,7 @@ object ModifierFunctions {
             val bleed = attacker.getStatusEffect(TNS.BLEEDING)
             val bleedingAmp = bleed?.amplifier ?: -1
             val bleedingMultiplier = (bleedingAmp * 0.5f) + 1.5f
-            attacker.addStatusEffect(StatusEffectInstance(TNS.BLEEDING,100,max(3,bleedingAmp + 1)))
+            attacker.addStatusEffect(StatusEffectInstance(TNS.BLEEDING,100,min(3,bleedingAmp + 1)))
             user.heal(2f * bleedingMultiplier)
             amount * bleedingMultiplier
         }
@@ -33,5 +33,5 @@ object ModifierFunctions {
                 return@DamageFunction amount * 1.5f
             amount
         }
-  
+
 }

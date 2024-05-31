@@ -15,7 +15,7 @@ open class CustomTridentEntity : BasicCustomTridentEntity {
 
     override fun onOwnedHit(owner: LivingEntity, target: LivingEntity, source: DamageSource, amount: Float, stack: ItemStack): Float{
         var newAmount = amount
-        for (equipMod in EquipmentModifierHelper.getRelevantModifiers(owner,stack)){
+        for (equipMod in EquipmentModifierHelper.getRelevantModifiers(owner,stack)) {
             newAmount = equipMod.onAttack(stack,owner,target,source, newAmount)
             equipMod.postHit(stack, owner, target)
         }
